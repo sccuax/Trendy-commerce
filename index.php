@@ -37,7 +37,28 @@
     </div>
 </div>
 
-
+<!--First container, this contains the announcement and the categories-->
+<div class="first-container d-flex align-items-center universal_spacing w-auto">
+    <div class="align-self-stretch announemennt position-relative overflow-hidden">
+        <div class="d-flex vertical_gap align-items-start flex-column announemennt-text">
+            <div class="text-content d-flex flex-column align-items-start">
+            <p class="over-fifty">Over 50 watches</p>
+            <p class="best-watches">Best watches 
+                waiting for you </p>
+            </div>
+                <div class="d-flex view-offers btn border rounded-pill flex-row align-items-center">
+                    <a class=" btn-view" href="">View offers</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                    <path d="M13.5003 7.55063L0.706883 14.8361L0.794248 0.113885L13.5003 7.55063Z" fill="#FEFEFF" fill-opacity="0.8"/>
+                    </svg>
+                </div>
+        </div>
+        <div class="watch-announcement position-absolute">
+        <img src="img/First-container/Group 15 1.png" alt="" height="425.833px">
+        </div>
+    </div>
+    
+</div>
 
 
 

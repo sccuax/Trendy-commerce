@@ -3,7 +3,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 80px;
+    gap: var(--universal_gap);
     background: #F8FAFC;
 }
 
@@ -14,11 +14,21 @@ body{
     --padding-navbar: 10px 58px;
     --padding-buttons-navbar:11.5px 20px;;
     --gap-navbar: 40px;
-
+    --universal_gap: 80px;
+    --no-margin: 0;
+    --no-padding: 0;
     /*Fonts size*/
     --font-20: 18px;
     /*Fonts color*/
     --color-text: #333;
+  }
+
+  /*Universal clases*/
+  .universal_spacing{
+    gap: var(--universal_gap);
+  }
+  .vertical_gap{
+    gap: var(--gap-navbar);
   }
 
 /*---------Navbar----------*/
@@ -78,4 +88,69 @@ body{
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.2px;
+}
+
+/*stlyles for the fist container*/
+.first-container{
+    height: 513px;
+    margin: var(--main-padding);
+}
+
+.announemennt{
+    border-radius: 20px;
+    background: #194E80;
+}
+
+.announemennt-text{
+    width: 466px;
+    margin: 135px 406px 129px 56px;
+}
+
+.text-content{
+    gap: 15px;
+}
+
+.over-fifty{
+    color: #1F8BEF;
+    text-align: center;
+    font-family: Gotham;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.84px;
+    margin: var(--no-margin);
+}
+
+.best-watches{
+    width: 442px;
+    color: #FEFEFF;
+    font-family: Gotham;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: var(--no-margin);
+}
+
+.view-offers{
+    padding: 15px 20px;
+    gap: 10px;
+}
+.btn-view{
+    padding: var(--no-padding);
+    color: rgba(254, 254, 255, 0.80);
+    text-align: center;
+    text-decoration: none;
+    font-family: Gotham;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.69px;
+}
+
+.watch-announcement{
+    bottom: 40px;
+    right: -100px;
 }
