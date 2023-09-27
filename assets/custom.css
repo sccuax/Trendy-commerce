@@ -103,7 +103,7 @@ body{
 
 .announemennt-text{
     width: 466px;
-    margin: 135px 406px 129px 56px;
+    margin: 135px 406px 110px 56px;
 }
 
 .text-content{
@@ -153,4 +153,104 @@ body{
 .watch-announcement{
     bottom: 40px;
     right: -100px;
+}
+
+.img-slider{
+    width: 928px;
+    height: 513px;
+}
+
+.img-slider .slide_content{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.img-slider .slide_content.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 3s;
+    transition-property: clip-path;
+}
+
+.img-slider .slide_content img{
+    z-index: 1;
+}
+
+.img-slider .navigator{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-slider .navigator .button_slider{
+    width: 14px;
+    height: 14px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #d9d9d97e;
+}
+
+.img-slider .navigator .button_slider.active{
+    background: #D9D9D9;
+}
+
+/*responsive desing for the slider until line 245.  TO FIX*/
+@media (max-width: 820px){
+    .img-slider{
+        width: 600px;
+        height: 375px;
+    }
+
+    .img-slider .slide_content .text-content .over-fifty{
+        font-size: 15px;
+    }
+    .img-slider .slide_content .text-content .best-watches{
+        font-size: 35px;
+        width: 70%;
+    }
+
+.img-slider .navigator{
+    bottom: 25px;
+}
+    .img-slider .navigator .button_slider{
+        width: 10px;
+        height: 10px;
+        margin: 8px;
+    }
+}
+
+@media (max-width: 620px){
+    .img-slider{
+        width: 400px;
+        height: 375px;
+    }
+
+    .img-slider .slide_content .text-content .over-fifty{
+        font-size: 13px;
+    }
+    .img-slider .slide_content .text-content .best-watches{
+        font-size: 30px;
+        width: 80%;
+    }
+
+.img-slider .navigator{
+    bottom: 15px;
+}
+    .img-slider .navigator .button_slider{
+        width: 8px;
+        height: 8px;
+        margin: 6px;
+    }
+}
+
+@media (max-width: 420px){
+    .img-slider{
+        width: 400px;
+        height: 375px;
+    }
 }
