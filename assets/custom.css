@@ -20,7 +20,6 @@ body{
     /*Fonts color*/
     --color-text: #333;
   }
-  
 
 /*---------Navbar----------*/
 .nav{
@@ -29,16 +28,13 @@ body{
     background: #FFF;
     padding: var(--padding-navbar);
 }
-
 .search-bar{
     width: 40%;
     gap: var(--gap-navbar);
 }
-
 .seacrh-input{
     padding-left: 2.75rem;
 }
-
 .search-icon{
     position: absolute;
     top: 5px;
@@ -47,7 +43,6 @@ body{
     height: 25px;
     pointer-events: none;
 }
-
 .count-products{
     position: absolute;
     top: 55%;
@@ -62,20 +57,16 @@ body{
     align-items: center;
     border-radius: 50%;
 }
-
 #contador-productos{
     font-size: 12px;
 }
-
 .shop-cart:hover{
     cursor: pointer;
 }
-
 .sign-and-menu-container{
     gap: var(--gap-navbar);
     width: 25%;
 }
-
 .login-singup{
     gap: 11px;
     padding: 9.5px 20px 9.5px;
