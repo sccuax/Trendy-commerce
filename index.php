@@ -76,10 +76,50 @@
                 </div>
         </div>
         <div class="watch-announcement position-absolute">
+        <img src="img/First-container/fosil-automatic.png" alt="" height="425.833px">
+        </div>
+    </div>
+
+<!--third slide-->
+<div class="slide_content align-self-stretch announemennt  overflow-hidden">
+        <div class="d-flex vertical_gap align-items-start flex-column announemennt-text">
+            <div class="text-content d-flex flex-column align-items-start">
+            <p class="over-fifty">Over 50 watches</p>
+            <p class="best-watches">Best watches 
+                waiting for you </p>
+            </div>
+                <div class="d-flex view-offers btn border rounded-pill flex-row align-items-center">
+                    <a class=" btn-view" href="">View offers</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                    <path d="M13.5003 7.55063L0.706883 14.8361L0.794248 0.113885L13.5003 7.55063Z" fill="#FEFEFF" fill-opacity="0.8"/>
+                    </svg>
+                </div>
+        </div>
+        <div class="watch-announcement position-absolute">
         <img src="img/First-container/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt="" height="425.833px">
         </div>
     </div>
 
+<!--fourth slide-->
+<div class="slide_content align-self-stretch announemennt  overflow-hidden">
+        <div class="d-flex vertical_gap align-items-start flex-column announemennt-text">
+            <div class="text-content d-flex flex-column align-items-start">
+            <p class="over-fifty">Over 50 watches</p>
+            <p class="best-watches">Best watches 
+                waiting for you </p>
+            </div>
+                <div class="d-flex view-offers btn border rounded-pill flex-row align-items-center">
+                    <a class=" btn-view" href="">View offers</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                    <path d="M13.5003 7.55063L0.706883 14.8361L0.794248 0.113885L13.5003 7.55063Z" fill="#FEFEFF" fill-opacity="0.8"/>
+                    </svg>
+                </div>
+        </div>
+        <div class="watch-announcement position-absolute">
+        <img src="img/First-container/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt="" height="425.833px">
+        </div>
+    </div>
+        <!--Navigation dots for the slider-->
         <div class="navigator">
             <div class="button_slider active"></div>
             <div class="button_slider"></div>
@@ -109,6 +149,7 @@ var manuallyNav = function(manual){
 
 btns.forEach((btn, i) => {
     btn.addEventListener("click", () => {
+        cleanDots()
         manuallyNav(i);
         currentSlide = i;
     });
@@ -137,6 +178,12 @@ var repeat = function(){
 }
 
 repeat();
+
+function cleanDots() {
+    btns.forEach((btn) => {
+        btn.classList.remove('active');
+    });
+}
 
 </script>
 
