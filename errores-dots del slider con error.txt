@@ -1,0 +1,59 @@
+  var slides = document.querySelectorAll('.slide_content');
+var btns = document.querySelectorAll('.button_slider');
+var currentSlide = 0; // Cambiado a 0 para que empiece desde la primera diapositiva
+
+
+------------------------------------------------codigo para que funcionen los dots del slider con error de que al cambiar el slider manualmente se quede activado el anterior------------------------------------------------
+
+
+// Función para navegar manualmente a una diapositiva
+var manuallyNav = function(manual){
+    slides.forEach((slide) => {
+        slide.classList.remove('active');
+    });
+
+    btns.forEach((btn) =>{
+        btn.classList.remove('active');
+    });
+
+    slides[manual].classList.add('active');
+    btns[manual].classList.add('active');
+}
+
+btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+        cleanDots()
+        manuallyNav(i);
+        currentSlide = i;
+    });
+});
+
+// Función para avanzar automáticamente
+var repeat = function(){
+    let i = 0;
+
+    var repeater = () => {
+        setTimeout(function(){
+            slides[i].classList.remove('active');
+            btns[i].classList.remove('active');
+            i++;
+
+            if (i >= slides.length) {
+                i = 0;
+            }
+
+            slides[i].classList.add('active');
+            btns[i].classList.add('active');
+            repeater();
+        }, 5000); // Cambiado el tiempo para un avance más rápido
+    }
+    repeater();
+}
+
+repeat();
+
+function cleanDots() {
+    btns.forEach((btn) => {
+        btn.classList.remove('active');
+    });
+}

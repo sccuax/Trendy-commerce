@@ -90,12 +90,14 @@ body{
     letter-spacing: 0.2px;
 }
 
-/*stlyles for the fist container*/
+/*------------------stlyles for the fist container-----------------*/
 .first-container{
     height: 513px;
-    margin: var(--main-padding);
+    padding: var(--main-padding);
+    gap: 80px;
 }
 
+/*----announcement style-slider-----*/
 .announemennt{
     border-radius: 20px;
     background: #194E80;
@@ -150,11 +152,13 @@ body{
     letter-spacing: 0.69px;
 }
 
+/*images*/
 .watch-announcement{
     bottom: 40px;
     right: -100px;
 }
 
+/*styles that support the slider*/
 .img-slider{
     width: 928px;
     height: 513px;
@@ -199,7 +203,7 @@ body{
     background: #D9D9D9;
 }
 
-/*responsive desing for the slider until line 245.  TO FIX*/
+/*responsive desing for the slider content until line 259.  TO FIX*/
 @media (max-width: 820px){
     .img-slider{
         width: 600px;
@@ -253,4 +257,65 @@ body{
         width: 400px;
         height: 375px;
     }
+}
+
+/*styles that support the cataegory container*/
+
+.categories-container{
+    flex: 1 0 0;
+    margin: 0 70px;
+}
+
+.container-firs_column{
+    height: 233px;
+    gap: var(--universal_gap);
+}
+
+.category-cards{
+    width: 228px;
+    height: 188.299px;
+    gap: 10px;
+    padding: 10px 38px 25px 38px;
+    border-radius: 20px;
+}
+
+.img_category{
+    width: 143.048px;
+    height: 142.145px;
+    border-radius: 20px;
+    top: 0;
+    box-shadow: 4px -2px 4px 0px rgba(74, 74, 74, 0.25), 0px 4px 4px 0px rgba(74, 74, 74, 0.25);
+}
+
+.container_text-arrow{
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+.containe_text-category{
+    gap: 5px;
+}
+
+.title_categories{
+    margin: var(--no-margin);
+    color: var(--color-text);
+text-align: center;
+font-family: Gotham;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.6px;
+}
+
+.Num_products{
+    margin: var(--no-margin);
+    color: #333;
+text-align: center;
+font-family: Gotham;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.3px;
 }
