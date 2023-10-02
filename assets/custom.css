@@ -21,6 +21,7 @@ body{
     --font-20: 18px;
     /*Fonts color*/
     --color-text: #333;
+    --color-Tittles: #353535;
   }
 
   /*Universal clases*/
@@ -318,4 +319,30 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 letter-spacing: 0.3px;
+}
+
+/*-------------------cards main container---------------*/
+
+.cards-container-main{
+    gap: 30px;
+    padding: var(--main-padding);
+}
+
+.our_products{
+    padding: 5px 0px;
+    gap: 0px 10px;
+    flex-wrap: wrap;
+}
+
+.title_our-products{
+    color: var(--color-Tittles);
+text-align: center;
+font-family: Roboto;
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1.8px;
+margin: var(--no-margin);
+padding: var(--no-padding);
 }

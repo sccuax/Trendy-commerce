@@ -250,6 +250,19 @@
 
 </div>
 </div>
+
+<!--Cards container-->
+<div  class="cards-container-main container-fluid d-flex flex-column align-items-center flex-wrap">
+    <!--OUR PRODUCTS buttons and range-->
+<div class="our_products container-fluid d-flex align-items-start align-content-start">
+    <div class="d-flex flex-column justify-content-center">
+        <h1 class="title_our-products">Our products</h1>
+    </div>
+    <div></div>
+</div>
+    <!--cards-->
+<div></div>
+</div>
 <script>
 var slides = document.querySelectorAll('.slide_content');
 var btns = document.querySelectorAll('.button_slider');
