@@ -130,7 +130,7 @@
 <!------------Container of the categories---------------->
 <div class="categories-container position-relative flex-fill d-flex flex-column justify-content-between align-items-center align-self-stretch align-content-center">
     <!--container of the first column-->
-    <div class="container-firs_column position-relative align-self-stretch d-flex justify-content-center align-items-end">
+    <div class="container-firs_column position-relative align-self-stretch d-flex justify-content-end align-items-end">
         <!--first card-->
         <div class="category-cards d-flex flex-column align-items-center justify-content-end" style="background: #576C80;">
             <img class="img_category position-absolute" src="img/First-container/Categories/waiting-410328_1280.jpg" alt="">
@@ -189,7 +189,7 @@
         </div>
     </div>
     <!--container of the second column of the categories-->
-    <div class="container-firs_column position-relative align-self-stretch d-flex justify-content-center align-items-end">
+    <div class="container-firs_column position-relative align-self-stretch d-flex justify-content-end align-items-end">
         <!--first card-->
     <div class="category-cards d-flex flex-column align-items-center justify-content-end" style="background: #00DFF3;">
             <img class="img_category position-absolute" src="img/First-container/Categories/reloj-mano-alto-angulo.jpg" alt="">
@@ -251,17 +251,218 @@
 </div>
 </div>
 
-<!--Cards container-->
+<!--------------Cards container-------------------->
 <div  class="cards-container-main container-fluid d-flex flex-column align-items-center flex-wrap">
     <!--OUR PRODUCTS buttons and range-->
-<div class="our_products container-fluid d-flex align-items-start align-content-start">
+<div class="our_products container-fluid d-flex align-items-start align-content-start flex-column">
+    <!--tittle-->
     <div class="d-flex flex-column justify-content-center">
         <h1 class="title_our-products">Our products</h1>
     </div>
-    <div></div>
+    <!--buttons and range container-->
+    <!--buttons-->
+    <div class="buttond_and-range d-flex align-items-center">
+        <div class="best_sellers d-flex rounded-pill align-items-center">
+            <div class="option1 d-flex justify-content-center align-items-center"><p class="b-sellers">Best sellers</p></div>
+            <div class="option2 d-flex flex-fill justify-content-center align-items-center"><p class="newest">Newest</p></div>
+        </div>
+          <!--range-->
+    <div class="range-container d-flex justify-content-start align-items-center">
+    <p class="price_range">Price range</p>
+    <div class="range_amount d-flex justify-content-center align-items-center">
+    <p class="amount_r">$100</p>
+    <input class="w-100" type="range" min="100" max="1000" value="100" style="color: #14AAD6;">
+    </div>
+    </div>
+    </div>
+  
 </div>
-    <!--cards-->
-<div></div>
+    <!--cards container first row-->
+<div class="container_cards_rows d-flex flex-column container-fluid justify-content-center align-items-center align-self-stretch">
+    <!--first column-->
+    <div class="card-columns d-flex container-fluid justify-content-center align-items-center align-self-stretch">
+        <!--card-->
+        <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
+                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
+                    <p class="card_text_profuct-name">Fosil Automtic</p>
+                    <p class="card_text_type">Automatic watch</p>
+                </div>
+                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
+                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
+                    <div class="container_counter-cards d-flex align-items-center">
+                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
+                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
+                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
+                </div>
+                </div>
+                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
+                <a href="" class="t-view-product">View product</a>
+                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                </div>
+            </div>
+        </div>
+        <!--card-->
+        <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
+                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
+                    <p class="card_text_profuct-name">Fosil Automtic</p>
+                    <p class="card_text_type">Automatic watch</p>
+                </div>
+                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
+                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
+                    <div class="container_counter-cards d-flex align-items-center">
+                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
+                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
+                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
+                </div>
+                </div>
+                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
+                <a href="" class="t-view-product">View product</a>
+                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                </div>
+            </div>
+        </div>
+        <!--card-->
+        <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
+                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
+                    <p class="card_text_profuct-name">Fosil Automtic</p>
+                    <p class="card_text_type">Automatic watch</p>
+                </div>
+                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
+                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
+                    <div class="container_counter-cards d-flex align-items-center">
+                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
+                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
+                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
+                </div>
+                </div>
+                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
+                <a href="" class="t-view-product">View product</a>
+                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                </div>
+            </div>
+        </div>
+        <!--card-->
+        <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
+                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
+                    <p class="card_text_profuct-name">Fosil Automtic</p>
+                    <p class="card_text_type">Automatic watch</p>
+                </div>
+                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
+                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
+                    <div class="container_counter-cards d-flex align-items-center">
+                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
+                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
+                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
+                </div>
+                </div>
+                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
+                <a href="" class="t-view-product">View product</a>
+                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--second column-->
+    <div class="card-columns d-flex container-fluid justify-content-center align-items-center align-self-stretch">
+        <!--card-->
+    <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
+                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
+                    <p class="card_text_profuct-name">Fosil Automtic</p>
+                    <p class="card_text_type">Automatic watch</p>
+                </div>
+                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
+                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
+                    <div class="container_counter-cards d-flex align-items-center">
+                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
+                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
+                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
+                </div>
+                </div>
+                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
+                <a href="" class="t-view-product">View product</a>
+                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                </div>
+            </div>
+        </div>
+        <!--card-->
+    <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
+                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
+                    <p class="card_text_profuct-name">Fosil Automtic</p>
+                    <p class="card_text_type">Automatic watch</p>
+                </div>
+                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
+                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
+                    <div class="container_counter-cards d-flex align-items-center">
+                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
+                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
+                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
+                </div>
+                </div>
+                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
+                <a href="" class="t-view-product">View product</a>
+                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                </div>
+            </div>
+        </div>
+        <!--card-->
+    <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
+                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
+                    <p class="card_text_profuct-name">Fosil Automtic</p>
+                    <p class="card_text_type">Automatic watch</p>
+                </div>
+                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
+                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
+                    <div class="container_counter-cards d-flex align-items-center">
+                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
+                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
+                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
+                </div>
+                </div>
+                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
+                <a href="" class="t-view-product">View product</a>
+                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                </div>
+            </div>
+        </div>
+        <!--card-->
+    <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
+                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
+                    <p class="card_text_profuct-name">Fosil Automtic</p>
+                    <p class="card_text_type">Automatic watch</p>
+                </div>
+                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
+                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
+                    <div class="container_counter-cards d-flex align-items-center">
+                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
+                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
+                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
+                </div>
+                </div>
+                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
+                <a href="" class="t-view-product">View product</a>
+                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 </div>
 <script>
 var slides = document.querySelectorAll('.slide_content');
