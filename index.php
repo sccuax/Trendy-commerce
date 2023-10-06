@@ -303,13 +303,13 @@
                 </div>
             </div>
         </div>
-        <!--card-->
+        <!--card 2-->
         <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/applewatch.jpg" alt=""></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
-                    <p class="card_text_profuct-name">Fosil Automtic</p>
-                    <p class="card_text_type">Automatic watch</p>
+                    <p class="card_text_profuct-name">Apple wacth series 7</p>
+                    <p class="card_text_type">Smartwatch</p>
                 </div>
                 <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
                     <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
@@ -325,13 +325,13 @@
                 </div>
             </div>
         </div>
-        <!--card-->
+        <!--card 3-->
         <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/cassioEdiffice.jpg" alt=""></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
-                    <p class="card_text_profuct-name">Fosil Automtic</p>
-                    <p class="card_text_type">Automatic watch</p>
+                    <p class="card_text_profuct-name">Casio Edifice</p>
+                    <p class="card_text_type">Mecanic watch</p>
                 </div>
                 <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
                     <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
@@ -347,12 +347,12 @@
                 </div>
             </div>
         </div>
-        <!--card-->
+        <!--card 4-->
         <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/fosilAutomatic.png" alt=""></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
-                    <p class="card_text_profuct-name">Fosil Automtic</p>
+                    <p class="card_text_profuct-name">Fosil C-automatic</p>
                     <p class="card_text_type">Automatic watch</p>
                 </div>
                 <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
@@ -372,12 +372,56 @@
     </div>
     <!--second column-->
     <div class="card-columns d-flex container-fluid justify-content-center align-items-center align-self-stretch">
-        <!--card-->
+        <!--card 5-->
     <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/fosilClassic.jpg" alt=""></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
-                    <p class="card_text_profuct-name">Fosil Automtic</p>
+                    <p class="card_text_profuct-name">Fosil Classic</p>
+                    <p class="card_text_type">Mecanic watch</p>
+                </div>
+                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
+                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
+                    <div class="container_counter-cards d-flex align-items-center">
+                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
+                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
+                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
+                </div>
+                </div>
+                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
+                <a href="" class="t-view-product">View product</a>
+                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                </div>
+            </div>
+        </div>
+        <!--card 6-->
+    <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/gForce.jpg" alt=""></div>
+            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
+                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
+                    <p class="card_text_profuct-name">G-force Chrono</p>
+                    <p class="card_text_type">Mecanic watch</p>
+                </div>
+                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
+                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
+                    <div class="container_counter-cards d-flex align-items-center">
+                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
+                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
+                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
+                </div>
+                </div>
+                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
+                <a href="" class="t-view-product">View product</a>
+                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                </div>
+            </div>
+        </div>
+        <!--card 7-->
+    <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/Tissot.jpg" alt=""></div>
+            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
+                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
+                    <p class="card_text_profuct-name">Tissot 1853</p>
                     <p class="card_text_type">Automatic watch</p>
                 </div>
                 <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
@@ -394,57 +438,13 @@
                 </div>
             </div>
         </div>
-        <!--card-->
+        <!--card 8-->
     <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" src="img/cards_products/cassioEdiffice.jpg" alt=""></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
-                    <p class="card_text_profuct-name">Fosil Automtic</p>
-                    <p class="card_text_type">Automatic watch</p>
-                </div>
-                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
-                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
-                    <div class="container_counter-cards d-flex align-items-center">
-                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
-                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
-                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
-                </div>
-                </div>
-                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
-                <a href="" class="t-view-product">View product</a>
-                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
-                </div>
-            </div>
-        </div>
-        <!--card-->
-    <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
-            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
-                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
-                    <p class="card_text_profuct-name">Fosil Automtic</p>
-                    <p class="card_text_type">Automatic watch</p>
-                </div>
-                <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
-                    <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
-                    <div class="container_counter-cards d-flex align-items-center">
-                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
-                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
-                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
-                </div>
-                </div>
-                <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
-                <a href="" class="t-view-product">View product</a>
-                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
-                </div>
-            </div>
-        </div>
-        <!--card-->
-    <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
-            <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
-                <div class="card_text d-flex flex-column align-items-start align-self-stretch">
-                    <p class="card_text_profuct-name">Fosil Automtic</p>
-                    <p class="card_text_type">Automatic watch</p>
+                    <p class="card_text_profuct-name">Casio Edifice</p>
+                    <p class="card_text_type">Mecanic watch</p>
                 </div>
                 <div class="cards_container-buttons d-flex align-items-center align-self-stretch">
                     <a class="buy_card_button align-self-stretch justify-content-center align-items-center d-flex" href="">Buy $100</a>
@@ -463,6 +463,25 @@
         </div>
     </div>
 </div>
+</div>
+
+<!-------------second advertisement container----------------->
+<div class="second-advertisement d-flex justify-content-between align-items-center container-fluid position-relative">
+    <div class="advertisement-text d-flex flex-column align-items-start flex-fill">
+        <div class="d-flex advertisement-text_h1 flex-column align-items-start align-self-stretch">
+            <h3 class="the_best-online">The best online <br> watches store</h3>
+            <p class="Elevate_your-style">Elevate Your Style with Our <br> Exclusive Watch Collection.</p>
+        </div>
+        <div class="d-flex view-offers btn border rounded-pill flex-row align-items-center">
+            <a class=" btn-view" href="">Shop now</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 12 14" fill="none">
+                    <path d="M11.9994 7.04479L0.711094 13.4731L0.78818 0.482955L11.9994 7.04479Z" fill="#F8C82B"/>
+                </svg>
+        </div>
+    </div>
+    <div class="position-absolute top-0 end-0">
+        <img src="img/annoucemnet/Frame 58.png" width="1088px" height="582px" alt="">
+    </div>
 </div>
 <script>
 var slides = document.querySelectorAll('.slide_content');
@@ -515,13 +534,76 @@ var repeat = function () {
 repeat();
 </script>
 
-
-
-
-    <?php
-    echo "Hola";
-    ?>
-<script src="">
-</script>
+<footer class="d-flex flex-column align-items-center container-fluid">
+    <!--main container-->
+    <div class="main_container-footer d-flex justify-content-between align-items-start align-self-stretch">
+        <div class="first-container-footer w-100 d-flex flex-row justify-content-start align-self-stretch">
+            <!--logo and subscribe to the newsletter-->
+            <div class="logo-and_subscribe-content d-flex flex-column align-items-start align-self-stretch">
+                <img src="img/Logo.png" width="231px" alt="">
+                <div class="subscribe_content d-flex flex-column align-items-start">
+                    <div class="d-flex align-items-end subscribe_content">
+                        <img src="img/Recurso 6-8.png" width="44px" alt="">
+                        <p class="subscribe-text">SUBSCIBE TO THE NEWSLETTER</p>
+                    </div>
+                    <div class="send-email-social flex-column d-flex align-tems-start align-self-stretch">
+                        <div class="position-relative"><input class="enter-your-email rounded-pil" type="email" placeholder="Enter your email">
+                        <svg class="position-absolute top-50 translate-middle" style="right: 10px; cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" fill="none">
+                        <ellipse cx="15.3211" cy="13.5391" rx="14.45" ry="13.5" fill="#3C89A2"/>
+                        <path d="M13.1035 6.51933C13.2394 6.51933 13.3746 6.53605 13.4981 6.57181C13.8153 6.66317 14.0723 6.80933 14.3212 6.96833C17.3516 8.90464 20.3857 10.8382 23.4204 12.7718C23.7633 12.9903 23.992 13.2356 23.9914 13.5555C23.9902 13.87 23.7726 14.1149 23.432 14.3283C21.3618 15.6263 19.2928 16.9247 17.2231 18.2231C16.1628 18.8883 15.1037 19.5546 14.0415 20.2185C13.492 20.5622 12.8011 20.65 12.1803 20.4607C11.1703 20.1528 10.9693 19.3695 11.7623 18.8299C11.8164 18.793 11.8742 18.7588 11.9307 18.7234C14.6101 17.0429 17.2895 15.3624 19.9689 13.6815C20.1099 13.5931 20.1119 13.5052 19.9751 13.4179C17.292 11.7071 14.6101 9.99622 11.9258 8.28654C11.5828 8.06807 11.3492 7.82239 11.3529 7.50284C11.3584 7.06688 11.7693 6.70198 12.4252 6.5584C12.4258 6.55827 12.4262 6.55821 12.4268 6.55821C12.4274 6.55821 12.4283 6.55814 12.4289 6.558C12.5411 6.53286 12.6582 6.51855 12.7771 6.51855L13.1035 6.51933Z" fill="#D1D1D1"/>
+                        </svg>
+                    </div>
+                        <div class="social-media-container d-flex align-tems-start">
+                            <img class="img-social" src="img/social media/facebook (3).png" alt="">
+                            <img class="img-social" src="img/social media/instagram (1).png" alt="">
+                            <img class="img-social" src="img/social media/gorjeo.png" alt="">
+                            <img class="img-social" src="img/social media/linkedin.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Menu footer-->
+            <div class="menu-footer-container d-flex flex-row align-tems-start align-self-stretch">
+                <div class="menu-footer d-flex flex-column align-items-start align-self-stretch">
+                    <h5 class="tittle-footer">Main</h5>
+                    <ul class="d-flex flex-column">
+                        <li><a class="link-footer" href="">Home</a></li>
+                        <li><a class="link-footer" href="">contact us</a></li>
+                        <li><a class="link-footer" href="">Log in</a></li>
+                        <li><a class="link-footer" href="">Order online</a></li>
+                    </ul>
+                </div>
+                <div class="menu-footer d-flex align-items-start align-self-stretch">
+                <div class="menu-footer d-flex flex-column align-items-start align-self-stretch">
+                    <h5 class="tittle-footer">Categories</h5>
+                    <ul class="d-flex flex-column">
+                        <li><a class="link-footer" href="">Classics</a></li>
+                        <li><a class="link-footer" href="">Luxury</a></li>
+                        <li><a class="link-footer" href="">Smart watch</a></li>
+                        <li><a class="link-footer" href="">All products</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="menu-footer d-flex align-items-start align-self-stretch">
+                <div class="menu-footer d-flex flex-column align-items-start align-self-stretch">
+                    <h5 class="tittle-footer">Help</h5>
+                    <ul class="d-flex flex-column">
+                        <li><a class="link-footer" href="">FAQs</a></li>
+                        <li><a class="link-footer" href="">Virtual assistance</a></li>
+                        <li><a class="link-footer" href="">infotrend@mail.com</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="termns-policies d-flex justify-content-between align-items-center align-self-stretch">
+        <p class="termns_text">© 2023 TrendyCommerce</p>
+        <div class="container_termns d-flex align-items-start">
+            <a class="link-offset-2 link-offset-3-hover link-underline-hover" href="" target="bl" class="termns_text">Terms of use</a>
+            <a href="" target="bl" class="termns_text">Privacy policy</a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
