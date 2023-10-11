@@ -636,7 +636,7 @@ letter-spacing: 0.96px;
 footer{
     border-top: solid 1px #0E8FB8;
     background-color: #ffffff;
-    padding: var(--no-padding);
+    padding: 0 !important;
 }
 /*subscribe container*/
 
@@ -741,6 +741,17 @@ text-decoration: none;
     gap: 100px;
 }
 
+.copy_right{
+    color: var(--color-text);
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 100;
+line-height: normal;
+letter-spacing: 0.48px;
+margin: var(--no-margin);
+}
+
 .termns_text{
     color: var(--color-text);
 font-family: Roboto;
@@ -750,4 +761,9 @@ font-weight: 100;
 line-height: normal;
 letter-spacing: 0.48px;
 margin: var(--no-margin);
+text-decoration: none;
+}
+
+.termns_text:hover{
+    text-decoration: underline;
 }
