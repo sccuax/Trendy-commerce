@@ -41,7 +41,7 @@
                 <a class="link_menu_admin" href="">Add product</a>
                 <a class="link_menu_admin" href="">Update</a>
                 <a class="link_menu_admin" href="">Delete</a>
-                <a class="link_menu_admin" href="allUsers.php">Users</a>
+                <a class="link_menu_admin" href="">Users</a>
                 <a class="link_menu_admin" href="">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
             </div>
@@ -61,45 +61,92 @@
             <img src="../img/notificacion.png" width=" 40px" alt="">
         </div>
         <div class="container_dashboard_fields container-fluid d-flex flex-column align-items-center justify-content-start align-self-stretch">
-        <div class="d-flex justify-content-center align-items-center "><h6 class="users_title_admin" align='center'> Users </h6></div>
-<?php
-$server_name = "localhost";
-$nombre_BD = "trendy _commce";
-$user_name = "root";
-$contraseña = "12345";
+        <div class="d-flex container-view-users justify-content-center flex-column container-fluid align-items-center "><h6 class="users_title_admin" align='center'> View users </h6>
+            <div id="user-details" class="d-flex text-center justify-content-between align-items-center w-100">
+                <p class="view_user col-md-2"><span id="user-id"></span></p>
+                <p class="view_user col-md-2"><span id="user-name"></span></p>
+                <p class="view_user col-md-2"><span id="user-surname"></span></p>
+                <p class="view_user col-md-2"><span id="user-email"></span></p>
+                <p class="view_user col-md-2"><span id="user-address"></span></p>
+                <p class="view_user col-md-2"><span id="user-phone"></span></p>
+                </div>
+        </div>
+        
+        
+        <?php
+        $server_name = "localhost";
+        $nombre_BD = "trendy _commce"; // El espacio en el nombre de la base de datos podría causar problemas
+        $user_name = "root";
+        $contraseña = "12345";
 
-$conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
+        $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
 
-$queryClientes = "SELECT * FROM `users`";
+    $consulta = "select * from users";
 
-$resultado = mysqli_query($conexion, $queryClientes);
+    $resultado = mysqli_query($conexion, $consulta);
 
-echo "<table class='d-flex table contaner-fluid w-100 table_admin flex-column' align='center'>"; //inicio de html
-echo "
-    <tr class='tr_tittles bottom_line bottom_line-top d-flex justify-content-between align-items-center w-100'>
-        <td class='action_hover' scope='col'>ID</td>
-        <td class='action_hover' scope='col'>Name</td>
-        <td class='action_hover' scope='col'>Surname</td>
-        <td class='action_hover' scope='col'>Phone</td>
-        <td class='action_hover' scope='col'>Address</td>
-        <td class='action_hover' scope='col'>Email</td>
-    </tr>";
+    echo "<table class='d-flex table contaner-fluid w-100 table_admin flex-column' align='center'>";
+            echo "<tr class='tr_tittles bottom_line bottom_line-top d-flex justify-content-between align-items-center w-100'>
+                    <td align='center'>ID</td>
+                    <td align='center'>Name</td>
+                    <td align='center'>Surname</td>
+                    <td align='center'>View</td>
+                    <td align='center'>Update</td>
+                    <td align='center'>Delete</td>
+                </tr>";
 
-while ($row = mysqli_fetch_array($resultado)) {
-    echo "<tr class='tr_tittles bottom_line d-flex align-items-center justify-content-between w-100'>
-            <td class='action_hover' scope='row'>" . $row['id_users'] . "</td>
-            <td class='action_hover' scope='row'>" . $row['name'] . "</td>
-            <td class='action_hover' scope='row'>" . $row['surname'] . "</td>
-            <td class='action_hover' scope='row'>" . $row['email'] . "</td>
-            <td class='action_hover' scope='row'>" . $row['address'] . "</td>
-            <td class='action_hover' scope='row'>" . $row['phone_number'] . "</td>
-        </tr>";
-}
-echo "</table>"; //fin de la tabla
+                while ($row = mysqli_fetch_array($resultado)) {
+                    echo "<tr class='tr_tittles bottom_line d-flex justify-content-between align-items-center w-100'>
+                            <td width='10%'>" . $row['id_users'] . "</td>
+                            <td width='10%'>" . $row['name'] . "</td>
+                            <td width='10%'>" . $row['surname'] . "</td>
+                            <td style='display:none;' width='10%'>" . $row['email'] . "</td>
+                            <td style='display:none;' width='10%'>" . $row['address'] . "</td>
+                            <td style='display:none;' width='10%'>" . $row['phone_number'] . "</td>
+                            <td align='center' width='10%'><a class='user-link' href='#' data-user-id='" . $row['id_users'] . "'><img src='../img/admin img/visibilidad.png' width='20%' /></a></td>
+                            <td align='center' width='10%'><a href='updates.php?ide=" . $row['id_users'] . "'><img src='../img/admin img/actualizar.png' width='20%' /></a></td>
+                            <td align='center' width='10%'><a href='borrar2.php?ide=" . $row['id_users'] . "'><img src='../img/admin img/borrar.png' width='25%' /></a></td>
+                        </tr>";
+                }
+            echo "</table>";
+    ?>
 
-$numero = mysqli_num_rows($resultado);
-echo "<br><p class='number_users'>Number of users: " . $numero . "</p>";
-?>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var userLinks = document.querySelectorAll(".user-link");
+
+        userLinks.forEach(function(link) {
+            link.addEventListener("click", function(e) {
+                e.preventDefault();
+                var userId = this.getAttribute("data-user-id");
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "consult.php?id=" + userId, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            var data = JSON.parse(xhr.responseText);
+                            if (data) {
+                                // Actualizar los detalles del usuario en el área "user-details"
+                                document.getElementById("user-id").textContent = data.id_users;
+                                document.getElementById("user-name").textContent = data.name;
+                                document.getElementById("user-surname").textContent = data.surname;
+                                document.getElementById("user-email").textContent = data.email
+                                document.getElementById("user-address").textContent = data.address
+                                document.getElementById("user-phone").textContent = data.phone_number
+                            } else {
+                                alert("No se encontraron datos para el usuario.");
+                            }
+                        } else {
+                            alert("Error al cargar los datos del usuario.");
+                        }
+                    }
+                };
+                xhr.send();
+            });
+        });
+    });
+</script>
         </div>
     </div>
 </body>

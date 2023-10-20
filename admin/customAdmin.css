@@ -8,7 +8,7 @@ align-items: center;
 gap: 100px;
 }
 
-/*menu admin*/
+/*------------menu admin-------------*/
 .menu_admin{
     height: 100vh;
     width: 360px;
@@ -40,18 +40,6 @@ letter-spacing: 0.72px;
 text-decoration: none;
 }
 
-.admin_text:hover{
-    width: 158px;
-    color: #A21AB8;
-text-align: right;
-font-family: Roboto;
-font-size: 24px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-letter-spacing: 0.72px;
-}
-
 .menu-admin{
     gap: 43px
 }
@@ -64,10 +52,175 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;
 letter-spacing: 0.66px;
+text-decoration: none;
 }
 
+.link_menu_admin:hover{
+    position: relative;
+    left: 10px;
+    color: #A21AB8;
+text-align: right;
+font-family: Roboto;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.72px;
+}
+
+.log_out-container{
+    padding: 10px;
+    gap: 15px;
+}
+
+.logout{
+    color: #333;
+text-align: center;
+font-family: Candara;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.6px;
+text-decoration: none;
+}
+
+.logout:hover{
+    text-decoration: underline;
+}
+
+/*--------------dashboard------------*/
 .dashboard{
-    padding: 25px 0px;
+    height: 100vh;
+    padding: 15px 0px;
 gap: 50px;
 background: #ffffff;
+}
+
+.profile_notifications{
+    height: 98px;
+}
+
+.welcome_admin{
+    color: #333;
+text-align: center;
+font-family: Candara;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.72px;
+margin: 0;
+}
+
+.profile_picture{
+    width: 58px;
+    height: 58px;
+    border-radius: 58px;
+background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+
+/*container of the dashoard fields*/
+.container_dashboard_fields{
+    height: 100vh;
+    padding: 0px 20px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    gap: 15px;
+    flex: 1 0 0;
+    border: 0.5px solid #AEAEAE;
+    background: #FFF;
+}
+
+/*----------------------------------------------------Users page---------------------------------------------------*/
+.users_title_admin{
+    color: #2F2F2F;
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.72px;
+    text-decoration: none;
+}
+
+.table_admin{
+    margin: 0;
+}
+
+tbody{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+}
+
+.tr_tittles{
+    padding: 0 20px;
+}
+
+.bottom_line{
+    border-bottom: 0.5px solid #AEAEAE;
+}
+.bottom_line-top{
+    border-top: 0.5px solid #AEAEAE;
+}
+
+.no_boder_style{
+    border-style: none;
+}
+
+td{
+    width: 150px !important;
+    border-style: none !important;
+    color: #333 !important;
+text-align: center;
+font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.72px;
+}
+
+tr{
+    height: 105px;
+}
+
+.tr_tittles .action_hover:hover{
+    background: #A8A8A9;
+}
+
+.number_users{
+    color: #333;
+    margin: 0;
+text-align: center;
+font-family: Candara;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.6px;
+}
+
+div p span {
+    color: #333 !important;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.72px;
+}
+
+p span{
+    display: inline-flex;
+}
+
+.container-view-users{
+    padding: 0!important;
+    gap: 20px;
 }
