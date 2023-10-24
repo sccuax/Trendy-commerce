@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <!----------------Menu------------->
+    <!-- Menu -->
     <div class="menu_admin d-flex flex-column align-items-start align-self-stretch">
         <div class="logo_admin w-fill d-flex justify-content-center align-items-center align-self-stretch">
         <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58" fill="none">
@@ -41,7 +41,7 @@
                 <a class="link_menu_admin" href="">Add product</a>
                 <a class="link_menu_admin" href="">Update</a>
                 <a class="link_menu_admin" href="">Delete</a>
-                <a class="link_menu_admin" href="">Users</a>
+                <a class="link_menu_admin" href="allUsers.php">Users</a>
                 <a class="link_menu_admin" href="">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
             </div>
@@ -51,102 +51,84 @@
             </div>
         </div>
     </div>
-    <!------------------Dashboard--------------->
+    <!-- Dashboard -->
     <div class="dashboard container-fluid d-flex flex-column align-items-center justify-content-start">
         <div class="profile_notifications container-fluid d-flex justify-content-between align-items-start">
             <div class="d-flex align-items-center gap-2">
                 <p class="welcome_admin">Welcome! Administrator</p>
                 <img class="profile_picture" src="../img/cat-5773481_1280.jpg" alt="">
             </div>
-            <img src="../img/notificacion.png" width=" 40px" alt="">
+            <img src="../img/notificacion.png" width="40px" alt="">
         </div>
         <div class="container_dashboard_fields container-fluid d-flex flex-column align-items-center justify-content-start align-self-stretch">
-        <div class="d-flex container-view-users justify-content-center flex-column container-fluid align-items-center "><h6 class="users_title_admin" align='center'> View users </h6>
-            <div id="user-details" class="d-flex text-center justify-content-between align-items-center w-100">
-                <p class="view_user col-md-2"><span id="user-id"></span></p>
-                <p class="view_user col-md-2"><span id="user-name"></span></p>
-                <p class="view_user col-md-2"><span id="user-surname"></span></p>
-                <p class="view_user col-md-2"><span id="user-email"></span></p>
-                <p class="view_user col-md-2"><span id="user-address"></span></p>
-                <p class="view_user col-md-2"><span id="user-phone"></span></p>
-                </div>
-        </div>
-        
-        
-        <?php
-        $server_name = "localhost";
-        $nombre_BD = "trendy _commce"; // El espacio en el nombre de la base de datos podría causar problemas
-        $user_name = "root";
-        $contraseña = "12345";
+            <div class="d-flex justify-content-center align-items-center ">
+                <h6 class="users_title_admin" align='center'> Update </h6>
+            </div>
+            <?php
+            $server_name = "localhost";
+            $nombre_BD = "trendy _commce"; 
+            $user_name = "root";
+            $contraseña = "12345";
 
-        $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
+            $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
+            ?>
+<div align='center' class='d-flex w-100 pt-3 justify-content-center'>
+    <table class='d-flex table container-fluid w-100 table_admin flex-column' id='table1'>
+        <form method='POST' action='updates2.php'>
+            <tr>
+                <td width='50%'><p align='center'><b>ID product</b></td>
+                <td width='50%'><p align='center'><input class='form-control' type='text' name='id_product ' size='20' value=''></td>
+            </tr>
 
-    $consulta = "select * from users";
+            <tr>
+                <td width='50%'><p align='center'><b>Product name</b></td>
+                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='product name' size='20' value=></td>
+            </tr>
 
-    $resultado = mysqli_query($conexion, $consulta);
+            <tr>
+                <td width='50%'><p align='center'><b>Price</b></td>
+                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='price' size='20' value=></td>
+            </tr>
 
-    echo "<table class='d-flex table contaner-fluid w-100 table_admin flex-column' align='center'>";
-            echo "<tr class='tr_tittles bottom_line bottom_line-top d-flex justify-content-between align-items-center w-100'>
-                    <td align='center'>ID</td>
-                    <td align='center'>Name</td>
-                    <td align='center'>Surname</td>
-                    <td align='center'>View</td>
-                    <td align='center'>Update</td>
-                    <td align='center'>Delete</td>
-                </tr>";
+            <tr>
+                <td width='50%'><p align='center'><b>Type of product</b></td>
+                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='id_type_product ' size='20' value=></td>
+            </tr>
 
-                while ($row = mysqli_fetch_array($resultado)) {
-                    echo "<tr class='tr_tittles bottom_line d-flex justify-content-between align-items-center w-100'>
-                            <td width='10%'>" . $row['id_users'] . "</td>
-                            <td width='10%'>" . $row['name'] . "</td>
-                            <td width='10%'>" . $row['surname'] . "</td>
-                            <td style='display:none;' width='10%'>" . $row['email'] . "</td>
-                            <td style='display:none;' width='10%'>" . $row['address'] . "</td>
-                            <td style='display:none;' width='10%'>" . $row['phone_number'] . "</td>
-                            <td align='center' width='10%'><a class='user-link' href='#' data-user-id='" . $row['id_users'] . "'><img src='../img/admin img/visibilidad.png' width='20%' /></a></td>
-                            <td align='center' width='10%'><a href='updates.php?ide=" . $row['id_users'] . "'><img src='../img/admin img/actualizar.png' width='20%' /></a></td>
-                            <td align='center' width='10%'><a href='delete.php?ide=" . $row['id_users'] . "'><img src='../img/admin img/borrar.png' width='25%' /></a></td>
-                        </tr>";
-                }
-            echo "</table>";
-    ?>
+            <input type ='hidden' name='id_product ' value='$ide'>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var userLinks = document.querySelectorAll(".user-link");
+            <tr>
+                <td><p align='center'><input class='submit-button btn btn-primary' type='submit' name='B1' value='Add'></td>
+            </tr>
+        </form>
+    </table>
+</div>
 
-        userLinks.forEach(function(link) {
-            link.addEventListener("click", function(e) {
-                e.preventDefault();
-                var userId = this.getAttribute("data-user-id");
+            <?php
+if (isset(
+    $_POST["id_product "],
+    $_POST["product name"],
+    $_POST["price"],
+    $_POST["id_type_product"]
+)) {
+    $id = $_POST["id_product "];
+    $nom = $_POST["product name"];
+    $pric = $_POST["price"];
+    $top = $_POST["id_type_product"];
 
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "consult.php?id=" + userId, true);
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === 4) {
-                        if (xhr.status === 200) {
-                            var data = JSON.parse(xhr.responseText);
-                            if (data) {
-                                // Actualizar los detalles del usuario en el área "user-details"
-                                document.getElementById("user-id").textContent = data.id_users;
-                                document.getElementById("user-name").textContent = data.name;
-                                document.getElementById("user-surname").textContent = data.surname;
-                                document.getElementById("user-email").textContent = data.email
-                                document.getElementById("user-address").textContent = data.address
-                                document.getElementById("user-phone").textContent = data.phone_number
-                            } else {
-                                alert("No se encontraron datos para el usuario.");
-                            }
-                        } else {
-                            alert("Error al cargar los datos del usuario.");
-                        }
-                    }
-                };
-                xhr.send();
-            });
-        });
-    });
-</script>
+    $insertar = "INSERT INTO products (id_product , product name, price, id_type_product) 
+                 VALUES ('$id', '$nom', '$pric', '$top')";
+
+                 if(mysqli_query($conexion,$insertar)){
+                    echo "<p align='center'> Registro exitoso</p>";
+                 }else{
+                    echo "<p align='center'> Registro fallido</p>";
+
+                 }
+}
+
+mysqli_close($conexion);
+            ?>
         </div>
     </div>
 </body>

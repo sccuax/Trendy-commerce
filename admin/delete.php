@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <!----------------Menu------------->
+    <!-- Menu -->
     <div class="menu_admin d-flex flex-column align-items-start align-self-stretch">
         <div class="logo_admin w-fill d-flex justify-content-center align-items-center align-self-stretch">
         <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58" fill="none">
@@ -41,7 +41,7 @@
                 <a class="link_menu_admin" href="">Add product</a>
                 <a class="link_menu_admin" href="">Update</a>
                 <a class="link_menu_admin" href="">Delete</a>
-                <a class="link_menu_admin" href="">Users</a>
+                <a class="link_menu_admin" href="allUsers.php">Users</a>
                 <a class="link_menu_admin" href="">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
             </div>
@@ -51,102 +51,78 @@
             </div>
         </div>
     </div>
-    <!------------------Dashboard--------------->
+    <!-- Dashboard -->
     <div class="dashboard container-fluid d-flex flex-column align-items-center justify-content-start">
         <div class="profile_notifications container-fluid d-flex justify-content-between align-items-start">
             <div class="d-flex align-items-center gap-2">
                 <p class="welcome_admin">Welcome! Administrator</p>
                 <img class="profile_picture" src="../img/cat-5773481_1280.jpg" alt="">
             </div>
-            <img src="../img/notificacion.png" width=" 40px" alt="">
+            <img src="../img/notificacion.png" width="40px" alt="">
         </div>
         <div class="container_dashboard_fields container-fluid d-flex flex-column align-items-center justify-content-start align-self-stretch">
-        <div class="d-flex container-view-users justify-content-center flex-column container-fluid align-items-center "><h6 class="users_title_admin" align='center'> View users </h6>
-            <div id="user-details" class="d-flex text-center justify-content-between align-items-center w-100">
-                <p class="view_user col-md-2"><span id="user-id"></span></p>
-                <p class="view_user col-md-2"><span id="user-name"></span></p>
-                <p class="view_user col-md-2"><span id="user-surname"></span></p>
-                <p class="view_user col-md-2"><span id="user-email"></span></p>
-                <p class="view_user col-md-2"><span id="user-address"></span></p>
-                <p class="view_user col-md-2"><span id="user-phone"></span></p>
-                </div>
-        </div>
-        
-        
-        <?php
-        $server_name = "localhost";
-        $nombre_BD = "trendy _commce"; // El espacio en el nombre de la base de datos podría causar problemas
-        $user_name = "root";
-        $contraseña = "12345";
+            <div class="d-flex justify-content-center align-items-center ">
+                <h6 class="users_title_admin" align='center'> Are you sure you want to delete this user? </h6>
+            </div>
+            <?php
+            $server_name = "localhost";
+            $nombre_BD = "trendy _commce"; 
+            $user_name = "root";
+            $contraseña = "12345";
 
-        $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
+            $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
+            ?>
 
-    $consulta = "select * from users";
+            <?php
+            $ide = $_GET["ide"];
 
-    $resultado = mysqli_query($conexion, $consulta);
+            $consulta = "SELECT * FROM users WHERE id_users = '$ide'";
 
-    echo "<table class='d-flex table contaner-fluid w-100 table_admin flex-column' align='center'>";
-            echo "<tr class='tr_tittles bottom_line bottom_line-top d-flex justify-content-between align-items-center w-100'>
-                    <td align='center'>ID</td>
-                    <td align='center'>Name</td>
-                    <td align='center'>Surname</td>
-                    <td align='center'>View</td>
-                    <td align='center'>Update</td>
-                    <td align='center'>Delete</td>
-                </tr>";
+            if ($resultado = mysqli_query($conexion, $consulta)) {
+                $row = mysqli_fetch_array($resultado);
+                echo "<div align='center' class='d-flex w-100 pt-3 justify-content-center'>
+                    <table class='d-flex table contaner-fluid w-100 table_admin flex-column' id='table1'>
+                        <form method='POST' action='delete2.php'>
+                            <tr>
+                                <td width='50%'><p align='center'><b>ID</b></td>
+                                <td width='50%'><p align='center'><input class='form-control' type='text' name='id_users' size='20' value='$ide' disabled='disabled'></td>
+                            </tr>
 
-                while ($row = mysqli_fetch_array($resultado)) {
-                    echo "<tr class='tr_tittles bottom_line d-flex justify-content-between align-items-center w-100'>
-                            <td width='10%'>" . $row['id_users'] . "</td>
-                            <td width='10%'>" . $row['name'] . "</td>
-                            <td width='10%'>" . $row['surname'] . "</td>
-                            <td style='display:none;' width='10%'>" . $row['email'] . "</td>
-                            <td style='display:none;' width='10%'>" . $row['address'] . "</td>
-                            <td style='display:none;' width='10%'>" . $row['phone_number'] . "</td>
-                            <td align='center' width='10%'><a class='user-link' href='#' data-user-id='" . $row['id_users'] . "'><img src='../img/admin img/visibilidad.png' width='20%' /></a></td>
-                            <td align='center' width='10%'><a href='updates.php?ide=" . $row['id_users'] . "'><img src='../img/admin img/actualizar.png' width='20%' /></a></td>
-                            <td align='center' width='10%'><a href='delete.php?ide=" . $row['id_users'] . "'><img src='../img/admin img/borrar.png' width='25%' /></a></td>
-                        </tr>";
-                }
-            echo "</table>";
-    ?>
+                            <tr>
+                                <td width='50%'><p align='center'><b>Nombre</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='name' size='20' disabled='disabled' value='". $row['name'] ."'></td>
+                            </tr>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var userLinks = document.querySelectorAll(".user-link");
+                            <tr>
+                                <td width='50%'><p align='center'><b>Apellido</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='surname' size='20' disabled='disabled' value='". $row['surname'] ."'></td>
+                            </tr>
 
-        userLinks.forEach(function(link) {
-            link.addEventListener("click", function(e) {
-                e.preventDefault();
-                var userId = this.getAttribute("data-user-id");
+                            <tr>
+                                <td width='50%'><p align='center'><b>Telefono</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='email' size='20' disabled='disabled' value='". $row['email'] ."' ></td>
+                            </tr>
 
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "consult.php?id=" + userId, true);
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === 4) {
-                        if (xhr.status === 200) {
-                            var data = JSON.parse(xhr.responseText);
-                            if (data) {
-                                // Actualizar los detalles del usuario en el área "user-details"
-                                document.getElementById("user-id").textContent = data.id_users;
-                                document.getElementById("user-name").textContent = data.name;
-                                document.getElementById("user-surname").textContent = data.surname;
-                                document.getElementById("user-email").textContent = data.email
-                                document.getElementById("user-address").textContent = data.address
-                                document.getElementById("user-phone").textContent = data.phone_number
-                            } else {
-                                alert("No se encontraron datos para el usuario.");
-                            }
-                        } else {
-                            alert("Error al cargar los datos del usuario.");
-                        }
-                    }
-                };
-                xhr.send();
-            });
-        });
-    });
-</script>
+                            <tr>
+                                <td width='50%'><p align='center'><b>Direccion</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='address' size='20' disabled='disabled' value='". $row['address'] ."'></td>
+                            </tr>
+
+                            <tr>
+                                <td width='50%'><p align='center'><b>Correo</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='phone_number' size='20' disabled='disabled' value='". $row['phone_number'] ."' ></td>
+                            </tr>
+
+                            <input type ='hidden' name='id_users' value='$ide'>
+
+                            <tr>
+                                <td><p align='center'><input class='submit-button btn btn-primary' type='submit' name='B1' value='Delete'></td>
+                            </tr>
+                        </form>
+                    </table>
+                </div>";
+            }
+            ?>
         </div>
     </div>
 </body>
