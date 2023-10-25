@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="customAdmin.css">
-    <link rel="stylesheet" href="../Normalice.css">
-    <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../customAdmin.css">
+    <link rel="stylesheet" href="../../Normalice.css">
+    <link rel="stylesheet" href="../../bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
-    <!-- Menu -->
+    <!----------------Menu------------->
     <div class="menu_admin d-flex flex-column align-items-start align-self-stretch">
         <div class="logo_admin w-fill d-flex justify-content-center align-items-center align-self-stretch">
         <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58" fill="none">
@@ -37,62 +37,65 @@
         </div>
         <div class="admin_menu_container container-fluid d-flex flex-column justify-content-between align-items-start">
             <div class="menu-admin d-flex flex-column align-items-start">
-                <a class="link_menu_admin" href="../Index.html">Home</a>
-                <a class="link_menu_admin" href="./products/addproduct.php">Add product</a>
-                <a class="link_menu_admin" href="./products/viewProduct.php">Update</a>
-                <a class="link_menu_admin" href="./products/viewDeleteProduct.php">Delete</a>
-                <a class="link_menu_admin" href="allUsers.php">Users</a>
+                <a class="link_menu_admin" href="../../Index.html">Home</a>
+                <a class="link_menu_admin" href="addproduct.php">Add product</a>
+                <a class="link_menu_admin" href="#">Update</a>
+                <a class="link_menu_admin" href="viewDeleteProduct.php">Delete</a>
+                <a class="link_menu_admin" href="../allUsers.php">Users</a>
                 <a class="link_menu_admin" href="">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
             </div>
             <div class="log_out-container d-flex justify-content-end align-items-center align-self-stretch">
                 <a class="logout link-offset-3-hover" href="">Log out</a>
-                <img src="../img/Recurso 15-8.png" width="40px" alt="">
+                <img src="../../img/Recurso 15-8.png" width="40px" alt="">
             </div>
         </div>
     </div>
-    <!-- Dashboard -->
+    <!------------------Dashboard--------------->
     <div class="dashboard container-fluid d-flex flex-column align-items-center justify-content-start">
         <div class="profile_notifications container-fluid d-flex justify-content-between align-items-start">
             <div class="d-flex align-items-center gap-2">
                 <p class="welcome_admin">Welcome! Administrator</p>
-                <img class="profile_picture" src="../img/cat-5773481_1280.jpg" alt="">
+                <img class="profile_picture" src="../../img/cat-5773481_1280.jpg" alt="">
             </div>
-            <img src="../img/notificacion.png" width="40px" alt="">
+            <img src="../../img/notificacion.png" width=" 40px" alt="">
         </div>
         <div class="container_dashboard_fields container-fluid d-flex flex-column align-items-center justify-content-start align-self-stretch">
-            <div class="d-flex justify-content-center align-items-center ">
-                <h6 class="users_title_admin" align='center'> Update </h6>
-            </div>
-            <?php
-    $server_name = "localhost";
-    $nombre_BD = "trendy _commce";
-    $user_name = "root";
-    $contraseña = "12345";
-    
-    $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
-
-    $ide =$_POST["id_users"];
-    $nom = $_POST["name"];
-    $apell = $_POST["surname"];
-    $cor = $_POST["email"];
-    $dir = $_POST["address"];
-    $tel = $_POST["phone_number"];
-    
-    
-    
-    //echo $ide;
-    $consulta = "UPDATE users SET name='$nom', surname='$apell', address='$dir', email='$cor', phone_number='$tel' WHERE id_users='$ide'";
-    if (mysqli_query($conexion, $consulta)) {
-        echo "<div class='container-check d-flex flex-column justify-content-center align-items-center p-2'>
-        <img class='' src='../img/cheque (1).png' width='212px'>
-        <div class='conatiner_text-check d-flex flex-column justify-content-center align-items-center align-self-stretch'>
-        <p class='all-right'>All right!</p>
-        <p class='the-info'>The info has been updated</p>
+        <div class="d-flex container-view-users justify-content-center flex-column container-fluid align-items-center "><h6 class="users_title_admin" align='center'> View users </h6>
         </div>
-        </div>";
-    } 
+        
+        <?php
+        $server_name = "localhost";
+        $nombre_BD = "trendy _commce"; // El espacio en el nombre de la base de datos podría causar problemas
+        $user_name = "root";
+        $contraseña = "12345";
 
+        $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
+
+    $consulta = "select * from products";
+
+    $resultado = mysqli_query($conexion, $consulta);
+
+    echo "<table class='d-flex table contaner-fluid w-100 table_admin flex-column' align='center'>";
+            echo "<tr class='tr_tittles bottom_line bottom_line-top d-flex justify-content-between align-items-center w-100'>
+                    <td align='center'>Product ID</td>
+                    <td align='center'>Product's name</td>
+                    <td align='center'>price</td>
+                    <td align='center'>View</td>
+                    <td align='center'>Update</td>
+                    <td align='center'>Delete</td>
+                </tr>";
+
+                while ($row = mysqli_fetch_array($resultado)) {
+                    echo "<tr class='tr_tittles bottom_line d-flex justify-content-between align-items-center w-100'>
+                            <td width='10%'>" . $row['id_product'] . "</td>
+                            <td width='10%'>" . $row['product_name'] . "</td>
+                            <td width='10%'>" . $row['price'] . "</td>
+                            <td style='display:none;' width='10%'>" . $row['id_type_product'] . "</td>
+                            <td align='center' width='10%'><a href='deleteProduct.php?idp=" . $row['id_product'] . "'><img src='../../img/admin img/borrar.png' width='25%' /></a></td>
+                        </tr>";
+                }
+            echo "</table>";
     ?>
         </div>
     </div>

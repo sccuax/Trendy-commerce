@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="customAdmin.css">
-    <link rel="stylesheet" href="../Normalice.css">
-    <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../customAdmin.css">
+    <link rel="stylesheet" href="../../Normalice.css">
+    <link rel="stylesheet" href="../../bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -37,17 +37,17 @@
         </div>
         <div class="admin_menu_container container-fluid d-flex flex-column justify-content-between align-items-start">
             <div class="menu-admin d-flex flex-column align-items-start">
-                <a class="link_menu_admin" href="../Index.html">Home</a>
-                <a class="link_menu_admin" href="./products/addproduct.php">Add product</a>
-                <a class="link_menu_admin" href="./products/viewProduct.php">Update</a>
-                <a class="link_menu_admin" href="./products/viewDeleteProduct.php">Delete</a>
-                <a class="link_menu_admin" href="allUsers.php">Users</a>
+                <a class="link_menu_admin" href="../../Index.html">Home</a>
+                <a class="link_menu_admin" href="addproduct.php">Add product</a>
+                <a class="link_menu_admin" href="#">Update</a>
+                <a class="link_menu_admin" href="viewDeleteProduct.php">Delete</a>
+                <a class="link_menu_admin" href="../allUsers.php">Users</a>
                 <a class="link_menu_admin" href="">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
             </div>
             <div class="log_out-container d-flex justify-content-end align-items-center align-self-stretch">
                 <a class="logout link-offset-3-hover" href="">Log out</a>
-                <img src="../img/Recurso 15-8.png" width="40px" alt="">
+                <img src="../../img/Recurso 15-8.png" width="40px" alt="">
             </div>
         </div>
     </div>
@@ -56,44 +56,57 @@
         <div class="profile_notifications container-fluid d-flex justify-content-between align-items-start">
             <div class="d-flex align-items-center gap-2">
                 <p class="welcome_admin">Welcome! Administrator</p>
-                <img class="profile_picture" src="../img/cat-5773481_1280.jpg" alt="">
+                <img class="profile_picture" src="../../img/cat-5773481_1280.jpg" alt="">
             </div>
-            <img src="../img/notificacion.png" width="40px" alt="">
+            <img src="../../img/notificacion.png" width="40px" alt="">
         </div>
         <div class="container_dashboard_fields container-fluid d-flex flex-column align-items-center justify-content-start align-self-stretch">
             <div class="d-flex justify-content-center align-items-center ">
                 <h6 class="users_title_admin" align='center'> Update </h6>
             </div>
             <?php
-    $server_name = "localhost";
-    $nombre_BD = "trendy _commce";
-    $user_name = "root";
-    $contraseña = "12345";
-    
-    $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
+            $server_name = "localhost";
+            $nombre_BD = "trendy _commce"; 
+            $user_name = "root";
+            $contraseña = "12345";
 
-    $ide =$_POST["id_users"];
-    $nom = $_POST["name"];
-    $apell = $_POST["surname"];
-    $cor = $_POST["email"];
-    $dir = $_POST["address"];
-    $tel = $_POST["phone_number"];
-    
-    
-    
-    //echo $ide;
-    $consulta = "UPDATE users SET name='$nom', surname='$apell', address='$dir', email='$cor', phone_number='$tel' WHERE id_users='$ide'";
-    if (mysqli_query($conexion, $consulta)) {
-        echo "<div class='container-check d-flex flex-column justify-content-center align-items-center p-2'>
-        <img class='' src='../img/cheque (1).png' width='212px'>
-        <div class='conatiner_text-check d-flex flex-column justify-content-center align-items-center align-self-stretch'>
-        <p class='all-right'>All right!</p>
-        <p class='the-info'>The info has been updated</p>
-        </div>
-        </div>";
-    } 
+            $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
+            ?>
+            <?php
 
-    ?>
+            $idp = $_GET["idp"];
+            $consulta = "SELECT * FROM products WHERE id_product LIKE '%$idp%'";
+
+            if ($resultado = mysqli_query($conexion, $consulta)) {
+                $row = mysqli_fetch_array($resultado);
+                echo "<div align='center' class='d-flex w-100 pt-3 justify-content-center'>
+                    <table class='d-flex table contaner-fluid w-100 table_admin flex-column' id='table1'>
+                        <form method='POST' action='updateProduct2.php'>
+                            <tr>
+                                <td width='50%'><p align='center'><b>ID</b></td>
+                                <td width='50%'><p align='center'><input class='form-control' type='text' name='id_product' size='20' value='$idp' disabled='disabled'></td>
+                            </tr>
+                            <tr>
+                                <td width='50%'><p align='center'><b>Product's name</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='product_name' size='20' value='". $row['product_name'] ."'></td>
+                            </tr>
+                            <tr>
+                                <td width='50%'><p align='center'><b>Price</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='price' size='20' value='". $row['price'] ."'></td>
+                            </tr>
+                            <tr>
+                                <td width='50%'><p align='center'><b>Type of product</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='id_type_product' size='20' value='". $row['id_type_product'] ."' ></td>
+                            </tr>
+                            <input type ='hidden' name='id_product' value='$idp'>
+                            <tr>
+                                <td><p align='center'><input class='submit-button btn btn-primary' type='submit' name='B1' value='Apdate'></td>
+                            </tr>
+                        </form>
+                    </table>
+                </div>";
+            }
+            ?>
         </div>
     </div>
 </body>

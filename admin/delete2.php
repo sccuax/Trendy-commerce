@@ -38,8 +38,8 @@
         <div class="admin_menu_container container-fluid d-flex flex-column justify-content-between align-items-start">
             <div class="menu-admin d-flex flex-column align-items-start">
                 <a class="link_menu_admin" href="../Index.html">Home</a>
-                <a class="link_menu_admin" href="">Add product</a>
-                <a class="link_menu_admin" href="">Update</a>
+                <a class="link_menu_admin" href="./products/addproduct.php">Add product</a>
+                <a class="link_menu_admin" href="./products/viewProduct.php">Update</a>
                 <a class="link_menu_admin" href="">Delete</a>
                 <a class="link_menu_admin" href="allUsers.php">Users</a>
                 <a class="link_menu_admin" href="">See all products</a>

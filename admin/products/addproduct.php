@@ -39,7 +39,7 @@
             <div class="menu-admin d-flex flex-column align-items-start">
                 <a class="link_menu_admin" href="../../Index.html">Home</a>
                 <a class="link_menu_admin" href="">Add product</a>
-                <a class="link_menu_admin" href="">Update</a>
+                <a class="link_menu_admin" href="viewProduct.php">Update</a>
                 <a class="link_menu_admin" href="">Delete</a>
                 <a class="link_menu_admin" href="../allUsers.php">Users</a>
                 <a class="link_menu_admin" href="">See all products</a>
@@ -62,7 +62,7 @@
         </div>
         <div class="container_dashboard_fields container-fluid d-flex flex-column align-items-center justify-content-start align-self-stretch">
             <div class="d-flex justify-content-center align-items-center ">
-                <h6 class="users_title_admin" align='center'> Update </h6>
+                <h6 class="users_title_admin" align='center'> Add a product </h6>
             </div>
             <?php
             $server_name = "localhost";
@@ -72,48 +72,65 @@
 
             $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
             ?>
+<div align='center' class='d-flex w-100 pt-3 justify-content-center position-relative'>
+<form class="d-flex w-100" method ="post" action="">
+        <table class="d-flex table contaner-fluid w-100 table_admin flex-column" align="center">
+            <tr><td>
+                <label for="">Id product
+                <input class="form-control update_input input_product" type="text" name="id_product" placeholder=""></input>
+                </label>
+                </td>
+            </tr>
 
-            <?php
-            $idp = $_GET["idp"];
+            <tr><td>
+                <label for="">Product's name
+                <input class="form-control update_input input_product" type="text" name="product_name" placeholder=""></input>
+                </label>
+                </td>
+            </tr>
 
-            $consulta = "SELECT * FROM products WHERE id_product = '$idp'";
+            <tr><td>
+                <label for="">Price
+                <input class="form-control update_input input_product" type="text" name="price" placeholder=""></input>
+                </label>
+                </td>
+            </tr>
 
-            if ($resultado = mysqli_query($conexion, $consulta)) {
-                $row = mysqli_fetch_array($resultado);
-                echo "<div align='center' class='d-flex w-100 pt-3 justify-content-center'>
-                    <table class='d-flex table contaner-fluid w-100 table_admin flex-column' id='table1'>
-                        <form method='POST' action='updates2.php'>
-                            <tr>
-                                <td width='50%'><p align='center'><b>ID</b></td>
-                                <td width='50%'><p align='center'><input class='form-control' type='text' name='id_product' size='20' value='$idp' disabled='disabled'></td>
-                            </tr>
+            <tr><td>
+                <label for="">Type of product
+                <input class="form-control update_input input_product" type="text" name="id_type_product" placeholder=""></input>
+                </label>
+                </td>
+            </tr>
+            <tr><td align="center">
+                <label for="">
+                <input class="submit-button btn btn-primary" type="submit" value="Add"></input>
+                </label>
+                </td>
+            </tr>
+        </table>
 
-                            <tr>
-                                <td width='50%'><p align='center'><b>Nombre</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='product name' size='20' value='". $row['product name'] ."'></td>
-                            </tr>
-
-                            <tr>
-                                <td width='50%'><p align='center'><b>Apellido</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='price' size='20' value='". $row['price'] ."'></td>
-                            </tr>
-
-                            <tr>
-                                <td width='50%'><p align='center'><b>Telefono</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='id_type_product' size='20' value='". $row['id_type_product'] ."' ></td>
-                            </tr>
-
-                            <input type ='hidden' name='id_product' value='$idp'>
-
-                            <tr>
-                                <td><p align='center'><input class='submit-button btn btn-primary' type='submit' name='B1' value='Add'></td>
-                            </tr>
-                        </form>
-                    </table>
-                </div>";
-            }
-            ?>
+</form>
+</div>
         </div>
     </div>
+    <?php
+    if (isset($_POST["id_product"], $_POST["product_name"], $_POST["price"], $_POST["id_type_product"])) {
+                $id = $_POST["id_product"];
+                $nom = $_POST["product_name"];
+                $pric = $_POST["price"];
+                $top = $_POST["id_type_product"];
+            
+                $insertar = "INSERT INTO products (id_product, product_name, price, id_type_product) 
+                             VALUES ('$id', '$nom', '$pric', '$top')";
+            
+                if (mysqli_query($conexion, $insertar)) {
+                    echo "<span class='position-absolute bottom-0 start-50'>Added correctly</span>";
+                } else {
+                    echo "<span class='position-absolute bottom-0 start-50' align='center'>Registro fallido</span>";
+                }
+            }
+            mysqli_close($conexion);
+    ?>
 </body>
 </html>

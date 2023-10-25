@@ -38,9 +38,9 @@
         <div class="admin_menu_container container-fluid d-flex flex-column justify-content-between align-items-start">
             <div class="menu-admin d-flex flex-column align-items-start">
                 <a class="link_menu_admin" href="../Index.html">Home</a>
-                <a class="link_menu_admin" href="">Add product</a>
-                <a class="link_menu_admin" href="">Update</a>
-                <a class="link_menu_admin" href="">Delete</a>
+                <a class="link_menu_admin" href="./products/addproduct.php">Add product</a>
+                <a class="link_menu_admin" href="./products/viewProduct.php">Update</a>
+                <a class="link_menu_admin" href="./products/viewDeleteProduct.php">Delete</a>
                 <a class="link_menu_admin" href="">Users</a>
                 <a class="link_menu_admin" href="">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
@@ -121,7 +121,7 @@
                 var userId = this.getAttribute("data-user-id");
 
                 var xhr = new XMLHttpRequest();
-                xhr.open("GET", "consult.php?id=" + userId, true);
+                xhr.open("GET", "Consult.php?id=" + userId, true);
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4) {
                         if (xhr.status === 200) {
@@ -131,9 +131,9 @@
                                 document.getElementById("user-id").textContent = data.id_users;
                                 document.getElementById("user-name").textContent = data.name;
                                 document.getElementById("user-surname").textContent = data.surname;
-                                document.getElementById("user-email").textContent = data.email
-                                document.getElementById("user-address").textContent = data.address
-                                document.getElementById("user-phone").textContent = data.phone_number
+                                document.getElementById("user-email").textContent = data.email;
+                                document.getElementById("user-address").textContent = data.address;
+                                document.getElementById("user-phone").textContent = data.phone_number;
                             } else {
                                 alert("No se encontraron datos para el usuario.");
                             }

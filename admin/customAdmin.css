@@ -297,3 +297,7 @@ letter-spacing: 0.72px;
 width: auto !important;
 margin: 0;
 }
+
+.input_product{
+    margin-top: 15px !important;
+}

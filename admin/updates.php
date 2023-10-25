@@ -38,9 +38,9 @@
         <div class="admin_menu_container container-fluid d-flex flex-column justify-content-between align-items-start">
             <div class="menu-admin d-flex flex-column align-items-start">
                 <a class="link_menu_admin" href="../Index.html">Home</a>
-                <a class="link_menu_admin" href="">Add product</a>
-                <a class="link_menu_admin" href="">Update</a>
-                <a class="link_menu_admin" href="">Delete</a>
+                <a class="link_menu_admin" href="./products/addproduct.php">Add product</a>
+                <a class="link_menu_admin" href="./products/viewProduct.php">Update</a>
+                <a class="link_menu_admin" href="./products/viewDeleteProduct.php">Delete</a>
                 <a class="link_menu_admin" href="allUsers.php">Users</a>
                 <a class="link_menu_admin" href="">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
@@ -72,62 +72,56 @@
 
             $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
             ?>
-<div align='center' class='d-flex w-100 pt-3 justify-content-center'>
-    <table class='d-flex table container-fluid w-100 table_admin flex-column' id='table1'>
-        <form method='POST' action='updates2.php'>
-            <tr>
-                <td width='50%'><p align='center'><b>ID product</b></td>
-                <td width='50%'><p align='center'><input class='form-control' type='text' name='id_product ' size='20' value=''></td>
-            </tr>
-
-            <tr>
-                <td width='50%'><p align='center'><b>Product name</b></td>
-                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='product name' size='20' value=></td>
-            </tr>
-
-            <tr>
-                <td width='50%'><p align='center'><b>Price</b></td>
-                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='price' size='20' value=></td>
-            </tr>
-
-            <tr>
-                <td width='50%'><p align='center'><b>Type of product</b></td>
-                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='id_type_product ' size='20' value=></td>
-            </tr>
-
-            <input type ='hidden' name='id_product ' value='$ide'>
-
-            <tr>
-                <td><p align='center'><input class='submit-button btn btn-primary' type='submit' name='B1' value='Add'></td>
-            </tr>
-        </form>
-    </table>
-</div>
 
             <?php
-if (isset(
-    $_POST["id_product "],
-    $_POST["product name"],
-    $_POST["price"],
-    $_POST["id_type_product"]
-)) {
-    $id = $_POST["id_product "];
-    $nom = $_POST["product name"];
-    $pric = $_POST["price"];
-    $top = $_POST["id_type_product"];
+            $ide = $_GET["ide"];
 
-    $insertar = "INSERT INTO products (id_product , product name, price, id_type_product) 
-                 VALUES ('$id', '$nom', '$pric', '$top')";
+            $consulta = "SELECT * FROM users WHERE id_users = '$ide'";
 
-                 if(mysqli_query($conexion,$insertar)){
-                    echo "<p align='center'> Registro exitoso</p>";
-                 }else{
-                    echo "<p align='center'> Registro fallido</p>";
+            if ($resultado = mysqli_query($conexion, $consulta)) {
+                $row = mysqli_fetch_array($resultado);
+                echo "<div align='center' class='d-flex w-100 pt-3 justify-content-center'>
+                    <table class='d-flex table contaner-fluid w-100 table_admin flex-column' id='table1'>
+                        <form method='POST' action='updates2.php'>
+                            <tr>
+                                <td width='50%'><p align='center'><b>ID</b></td>
+                                <td width='50%'><p align='center'><input class='form-control' type='text' name='id_users' size='20' value='$ide' disabled='disabled'></td>
+                            </tr>
 
-                 }
-}
+                            <tr>
+                                <td width='50%'><p align='center'><b>Product's name</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='name' size='20' value='". $row['name'] ."'></td>
+                            </tr>
 
-mysqli_close($conexion);
+                            <tr>
+                                <td width='50%'><p align='center'><b>Price</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='surname' size='20' value='". $row['surname'] ."'></td>
+                            </tr>
+
+                            <tr>
+                                <td width='50%'><p align='center'><b>Type of product</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='email' size='20' value='". $row['email'] ."' ></td>
+                            </tr>
+
+                            <tr>
+                                <td width='50%'><p align='center'><b>Direccion</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='address' size='20' value='". $row['address'] ."'></td>
+                            </tr>
+
+                            <tr>
+                                <td width='50%'><p align='center'><b>Correo</b></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='phone_number' size='20' value='". $row['phone_number'] ."' ></td>
+                            </tr>
+
+                            <input type ='hidden' name='id_users' value='$ide'>
+
+                            <tr>
+                                <td><p align='center'><input class='submit-button btn btn-primary' type='submit' name='B1' value='Apdate'></td>
+                            </tr>
+                        </form>
+                    </table>
+                </div>";
+            }
             ?>
         </div>
     </div>
