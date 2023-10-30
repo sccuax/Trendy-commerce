@@ -42,7 +42,7 @@
                 <a class="link_menu_admin" href="viewProduct.php">Update</a>
                 <a class="link_menu_admin" href="viewDeleteProduct.php">Delete</a>
                 <a class="link_menu_admin" href="../allUsers.php">Users</a>
-                <a class="link_menu_admin" href="">See all products</a>
+                <a class="link_menu_admin" href="allProducts.php">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
             </div>
             <div class="log_out-container d-flex justify-content-end align-items-center align-self-stretch">
@@ -62,35 +62,45 @@
         </div>
         <div class="container_dashboard_fields container-fluid d-flex flex-column align-items-center justify-content-start align-self-stretch">
             <div class="d-flex justify-content-center align-items-center ">
-                <h6 class="users_title_admin" align='center'> Update </h6>
+                <h6 class="users_title_admin" align='center'> Deleted </h6>
             </div>
             <?php
+if (isset($_POST['id_product'])) {
+    $idp = $_POST['id_product'];
+    
+    // Conectar a la base de datos
     $server_name = "localhost";
-    $nombre_BD = "trendy _commce";
+    $nombre_BD = "trendy _commce"; // Corrige el nombre de la base de datos
     $user_name = "root";
-    $contraseña = "12345";
-    
-    $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
+    $contrasena = "12345";
 
-    $idp =$_POST["id_product"];
-    $nam = $_POST["product_name"];
-    $pri = $_POST["price"];
-    $top = $_POST["id_type_product"];  
-    
-    
-    //echo $ide;
-    $consulta = "DELETE FROM users WHERE id_users='$idp'";
-    if (mysqli_query($conexion, $consulta)) {
-        echo "<div class='container-check d-flex flex-column justify-content-center align-items-center p-2'>
-        <img class='' src='../../img/cheque (1).png' width='212px'>
-        <div class='conatiner_text-check d-flex flex-column justify-content-center align-items-center align-self-stretch'>
-        <p class='all-right'>All right!</p>
-        <p class='the-info'>The info has been updated</p>
-        </div>
-        </div>";
-    } 
+    $conexion = mysqli_connect($server_name, $user_name, $contrasena, $nombre_BD);
 
-    ?>
+    if ($conexion) {
+        // Prepara y ejecuta la consulta de eliminación
+        $consulta = "DELETE FROM products WHERE id_product = '$idp'";
+        if (mysqli_query($conexion, $consulta)) {
+            echo "<div class='container-check d-flex flex-column justify-content-center align-items-center p-2'>
+                <img class='' src='../../img/cheque (1).png' width='212px'>
+                <div class='conatiner_text-check d-flex flex-column justify-content-center align-items-center align-self-stretch'>
+                    <p class='all-right'>All right!</p>
+                    <p class='the-info'>The info has been updated</p>
+                </div>
+            </div>";
+        } else {
+            echo "Error: " . mysqli_error($conexion);
+        }
+
+        // Cerrar la conexión
+        mysqli_close($conexion);
+    } else {
+        echo "Error de conexión a la base de datos: " . mysqli_connect_error();
+    }
+} else {
+    echo "ID del producto no proporcionado.";
+}
+?>
+
         </div>
     </div>
 </body>

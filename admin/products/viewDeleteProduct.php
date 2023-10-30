@@ -39,10 +39,10 @@
             <div class="menu-admin d-flex flex-column align-items-start">
                 <a class="link_menu_admin" href="../../Index.html">Home</a>
                 <a class="link_menu_admin" href="addproduct.php">Add product</a>
-                <a class="link_menu_admin" href="#">Update</a>
-                <a class="link_menu_admin" href="viewDeleteProduct.php">Delete</a>
+                <a class="link_menu_admin" href="viewProduct.php">Update</a>
+                <a class="link_menu_admin" href="#">Delete</a>
                 <a class="link_menu_admin" href="../allUsers.php">Users</a>
-                <a class="link_menu_admin" href="">See all products</a>
+                <a class="link_menu_admin" href="allProducts.php">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
             </div>
             <div class="log_out-container d-flex justify-content-end align-items-center align-self-stretch">

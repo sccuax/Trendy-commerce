@@ -42,7 +42,7 @@
                 <a class="link_menu_admin" href="./products/viewProduct.php">Update</a>
                 <a class="link_menu_admin" href="./products/viewDeleteProduct.php">Delete</a>
                 <a class="link_menu_admin" href="allUsers.php">Users</a>
-                <a class="link_menu_admin" href="">See all products</a>
+                <a class="link_menu_admin" href="./products/allProducts.php">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
             </div>
             <div class="log_out-container d-flex justify-content-end align-items-center align-self-stretch">

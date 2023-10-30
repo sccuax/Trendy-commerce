@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="customAdmin.css">
-    <link rel="stylesheet" href="../Normalice.css">
-    <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../customAdmin.css">
+    <link rel="stylesheet" href="../../Normalice.css">
+    <link rel="stylesheet" href="../../bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -37,17 +37,17 @@
         </div>
         <div class="admin_menu_container container-fluid d-flex flex-column justify-content-between align-items-start">
             <div class="menu-admin d-flex flex-column align-items-start">
-                <a class="link_menu_admin" href="../Index.html">Home</a>
-                <a class="link_menu_admin" href="./products/addproduct.php">Add product</a>
-                <a class="link_menu_admin" href="./products/viewProduct.php">Update</a>
-                <a class="link_menu_admin" href="./products/viewDeleteProduct.php">Delete</a>
-                <a class="link_menu_admin" href="allUsers.php">Users</a>
-                <a class="link_menu_admin" href="./products/allProducts.php">See all products</a>
+                <a class="link_menu_admin" href="../../Index.html">Home</a>
+                <a class="link_menu_admin" href="addproduct.php">Add product</a>
+                <a class="link_menu_admin" href="viewProduct.php">Update</a>
+                <a class="link_menu_admin" href="viewDeleteProduct.php">Delete</a>
+                <a class="link_menu_admin" href="../allUsers.php">Users</a>
+                <a class="link_menu_admin" href="#">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
             </div>
             <div class="log_out-container d-flex justify-content-end align-items-center align-self-stretch">
                 <a class="logout link-offset-3-hover" href="">Log out</a>
-                <img src="../img/Recurso 15-8.png" width="40px" alt="">
+                <img src="../../img/Recurso 15-8.png" width="40px" alt="">
             </div>
         </div>
     </div>
@@ -56,13 +56,13 @@
         <div class="profile_notifications container-fluid d-flex justify-content-between align-items-start">
             <div class="d-flex align-items-center gap-2">
                 <p class="welcome_admin">Welcome! Administrator</p>
-                <img class="profile_picture" src="../img/cat-5773481_1280.jpg" alt="">
+                <img class="profile_picture" src="../../img/cat-5773481_1280.jpg" alt="">
             </div>
-            <img src="../img/notificacion.png" width="40px" alt="">
+            <img src="../../img/notificacion.png" width="40px" alt="">
         </div>
         <div class="container_dashboard_fields container-fluid d-flex flex-column align-items-center justify-content-start align-self-stretch">
             <div class="d-flex justify-content-center align-items-center ">
-                <h6 class="users_title_admin" align='center'> Are you sure you want to delete this user? </h6>
+                <h6 class="users_title_admin" align='center'> All products </h6>
             </div>
             <?php
             $server_name = "localhost";
@@ -71,57 +71,31 @@
             $contraseña = "12345";
 
             $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
-            ?>
 
-            <?php
-            $ide = $_GET["ide"];
+    $consulta = "select * from products";
 
-            $consulta = "SELECT * FROM users WHERE id_users = '$ide'";
+    $resultado = mysqli_query($conexion, $consulta);
 
-            if ($resultado = mysqli_query($conexion, $consulta)) {
-                $row = mysqli_fetch_array($resultado);
-                echo "<div align='center' class='d-flex w-100 pt-3 justify-content-center'>
-                    <table class='d-flex table contaner-fluid w-100 table_admin flex-column' id='table1'>
-                        <form method='POST' action='delete2.php'>
-                            <tr>
-                                <td width='50%'><p align='center'><b>ID</b></td>
-                                <td width='50%'><p align='center'><input class='form-control' type='text' name='id_users' size='20' value='$ide' disabled='disabled'></td>
-                            </tr>
+    echo "<table class='d-flex table contaner-fluid w-100 table_admin flex-column' align='center'>";
+            echo "<tr class='tr_tittles bottom_line bottom_line-top d-flex justify-content-between align-items-center w-100'>
+                    <td align='center'>ID</td>
+                    <td align='center'>Product's name</td>
+                    <td align='center'>Price</td>
+                    <td align='center'>Id type of product</td>
+                </tr>";
 
-                            <tr>
-                                <td width='50%'><p align='center'><b>Nombre</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='name' size='20' disabled='disabled' value='". $row['name'] ."'></td>
-                            </tr>
+                while ($row = mysqli_fetch_array($resultado)) {
+                    echo "<tr class='tr_tittles bottom_line d-flex justify-content-between align-items-center w-100'>
+                            <td width='10%'>" . $row['id_product'] . "</td>
+                            <td width='10%'>" . $row['product_name'] . "</td>
+                            <td width='10%'>" . $row['price'] . "</td>
+                            <td width='10%'>" . $row['id_type_product'] . "</td>
+                        </tr>";
+                }
+            echo "</table>";
 
-                            <tr>
-                                <td width='50%'><p align='center'><b>Apellido</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='surname' size='20' disabled='disabled' value='". $row['surname'] ."'></td>
-                            </tr>
-
-                            <tr>
-                                <td width='50%'><p align='center'><b>Telefono</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='email' size='20' disabled='disabled' value='". $row['email'] ."' ></td>
-                            </tr>
-
-                            <tr>
-                                <td width='50%'><p align='center'><b>Direccion</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='address' size='20' disabled='disabled' value='". $row['address'] ."'></td>
-                            </tr>
-
-                            <tr>
-                                <td width='50%'><p align='center'><b>Correo</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='phone_number' size='20' disabled='disabled' value='". $row['phone_number'] ."' ></td>
-                            </tr>
-
-                            <input type ='hidden' name='id_users' value='$ide'>
-
-                            <tr>
-                                <td><p align='center'><input class='submit-button btn btn-primary' type='submit' name='B1' value='Delete'></td>
-                            </tr>
-                        </form>
-                    </table>
-                </div>";
-            }
+            $numero = mysqli_num_rows($resultado);
+echo "<br><p class='number_users'>Number of products: " . $numero . "</p>";
             ?>
         </div>
     </div>

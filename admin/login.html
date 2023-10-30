@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="customAdmin.css">
+    <link rel="stylesheet" href="../Normalice.css">
+    <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <title>Lognig</title>
+</head>
+<body class="body-login d-flex justify-content-center align-item-center w-fill">
+    <div class="container-form-login d-flex container-fluid h-100 justify-content-center align-item-center align-self-stretch">
+        <form class="login-inputs needs-validation d-flex w-50 flex-column justify-content-center align-item-center"
+        action="login.php" method="POST" novalidate>
+            <div class="login-inputs-content d-flex flex-column align-item-center">
+                <div class="tittle-login-image d-flex w-100 flex-column justify-content-center align-item-center">
+                    <div class="tittle-login-image-content d-flex w-fill align-items-end align-self-stretch">
+                        <h3 class="login-tittle">Login</h3>
+                        <img class="" src="../img/Recurso 1-8.png" width="40px" alt="">
+                    </div>
+                    <p class="best-watch-text">The best watches, what are you waiting for?</p>
+                </div>
+                <!---User input--->
+                <div class="user-input-container d-flex flex-column align-items-start">
+                    <p class="subtilte-login">User</p>
+                    <input class="form-control input-login-button" type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <!---Password input--->
+                <div class="user-input-container d-flex flex-column align-items-start">
+                    <p class="subtilte-login">Password</p>
+                    <input class="form-control input-login-button" type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <div class="d-flex align-items-center align-self-stretch justify-content-end">
+                        <a href="" class="forgot-password">Forgot password?</a>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-item-center">
+                    <button class="button-to-login btn btn-primary" type="submit">LOGIN</button>
+                </div>
+                <div class="user-input-container sign-up-container d-flex gap-1 flex-row align-items-end align-self-stretch">
+                    <p class="have-not-account">Don’t have an account?</p>
+                    <a class="sing-up-question" href=""> Sign up</a>
+                </div>
+            </div>
+        </form>
+        <div class="copy-container d-flex w-50 flex-column justify-content-center align-item-center align-self-stretch">
+            <div class="copy-message w-fill d-flex justify-content-center align-items-start align-content-start flex-wrap">
+                <h4 class="copy-text">Have you ever seen such<br>an amazing store<br>to purchase?</h4>
+                    <img src="../img/transparent-shopping-bag-red-shopping-bag-with-colorful-presents-inside652fdeb701d2c0 1.png" width="340px" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        (() => {
+  'use strict'
+
+  const forms = document.querySelectorAll('.needs-validation')
+
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+    </script>
+</body>
+</html>

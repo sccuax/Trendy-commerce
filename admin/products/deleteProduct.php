@@ -42,7 +42,7 @@
                 <a class="link_menu_admin" href="viewProduct.php">Update</a>
                 <a class="link_menu_admin" href="viewDeleteProduct.php">Delete</a>
                 <a class="link_menu_admin" href="allUsers.php">Users</a>
-                <a class="link_menu_admin" href="">See all products</a>
+                <a class="link_menu_admin" href="allProducts.php">See all products</a>
                 <a class="link_menu_admin" href="">Orders</a>
             </div>
             <div class="log_out-container d-flex justify-content-end align-items-center align-self-stretch">
@@ -82,7 +82,7 @@
                 $row = mysqli_fetch_array($resultado);
                 echo "<div align='center' class='d-flex w-100 pt-3 justify-content-center'>
                     <table class='d-flex table contaner-fluid w-100 table_admin flex-column' id='table1'>
-                        <form method='POST' action='delete2.php'>
+                        <form method='POST' action='deleteProduct2.php'>
                             <tr>
                                 <td width='50%'><p align='center'><b>ID</b></td>
                                 <td width='50%'><p align='center'><input class='form-control' type='text' name='id_product' size='20' value='$idp' disabled='disabled'></td>
@@ -90,27 +90,17 @@
 
                             <tr>
                                 <td width='50%'><p align='center'><b>Nombre</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='name' size='20' disabled='disabled' value='". $row['name'] ."'></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='product_name' size='20' disabled='disabled' value='". $row['product_name'] ."'></td>
                             </tr>
 
                             <tr>
                                 <td width='50%'><p align='center'><b>Apellido</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='surname' size='20' disabled='disabled' value='". $row['surname'] ."'></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='price' size='20' disabled='disabled' value='". $row['price'] ."'></td>
                             </tr>
 
                             <tr>
                                 <td width='50%'><p align='center'><b>Telefono</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='email' size='20' disabled='disabled' value='". $row['email'] ."' ></td>
-                            </tr>
-
-                            <tr>
-                                <td width='50%'><p align='center'><b>Direccion</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='address' size='20' disabled='disabled' value='". $row['address'] ."'></td>
-                            </tr>
-
-                            <tr>
-                                <td width='50%'><p align='center'><b>Correo</b></td>
-                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='phone_number' size='20' disabled='disabled' value='". $row['phone_number'] ."' ></td>
+                                <td width='50%'><p align='center'><input class='form-control update_input' type='text' name='id_type_product' size='20' disabled='disabled' value='". $row['id_type_product'] ."' ></td>
                             </tr>
 
                             <input type ='hidden' name='id_product' value='$idp'>

@@ -8,6 +8,10 @@ align-items: center;
 gap: 100px;
 }
 
+p{
+    margin: 0 !important;
+}
+
 /*------------menu admin-------------*/
 .menu_admin{
     height: 100vh;
@@ -300,4 +304,173 @@ margin: 0;
 
 .input_product{
     margin-top: 15px !important;
+}
+
+
+/*-------------------------------------login------------------------*/
+.body-login{
+    height: 100vh;
+    padding: 80px 100px !important;
+    gap: 10px;
+}
+
+/*container login*/
+.container-form-login{
+    border-radius: 30px;
+    padding: 0px 10px;
+    flex: 1 0 0;
+}
+
+.login-inputs{
+    padding: 58px 105px;
+    gap: 10px;
+    flex: 1 0 0;
+    border-radius: 30px 0px 0px 30px;
+    border-top: 10px solid #9444A1;
+    border-bottom: 10px solid #9444A1;
+    border-left: 10px solid #9444A1;
+    background: #FFF;
+}
+
+.login-inputs-content{
+    padding: 61px 4px 20px 4px;
+    gap: 30px;
+    flex-shrink: 0;
+}
+
+.tittle-login-image{
+    gap: 17px;
+}
+
+.tittle-login-image-content{
+    padding: 0px 39px;
+    gap: 17px;
+}
+
+.login-tittle{
+    color: #353535;
+text-align: center;
+font-family: Roboto !important;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 2px;
+margin: 0;
+}
+
+.best-watch-text{
+    color: #333;
+text-align: center;
+font-family: Candara;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1.2px;
+margin: 0 !important;
+width: auto !important;
+padding-left: 39px;
+text-align: left;
+}
+
+.user-input-container{
+    gap: 17px;
+    padding: 0px 39px;
+    flex-shrink: 0;
+}
+
+.subtilte-login{
+    color: #2F2F2F !important;
+/* font-family: Roboto; */
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1.2px;
+}
+
+.input-login-button{
+    height: 70px;
+    border-radius: 16px !important;
+    border: 0.5px solid #AEAEAE !important;
+    background: #FFF;
+}
+
+.forgot-password{
+    text-align: center;
+font-family: Candara;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1px;
+background: linear-gradient(231deg, rgba(1, 174, 217, 0.89) 15.18%, #7BC683 82.53%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.button-to-login{
+    width: 331px;
+    height: 55px;
+    border-radius: 50px !important;
+    background: radial-gradient(49.34% 49.34% at 50.46% 50.67%, rgba(1, 174, 217, 0.80) 0%, #019ED1 100%);
+    box-shadow: 4px -2px 4px 0px rgba(0, 0, 0, 0.15), -1px 4px 15px 0px rgba(1, 197, 252, 0.70);
+}
+
+.sign-up-container{
+    height: 91px;
+}
+
+.have-not-account{
+    color: #333 !important;
+    width: auto !important;
+text-align: center;
+font-family: Candara;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1px;
+}
+
+.sing-up-question{
+    background: linear-gradient(89deg, #7BC683 26.21%, #1DB7DD 139.43%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: Candara;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1px;
+}
+
+.copy-container{
+    border-radius: 0px 30px 30px 0px;
+background: #A29FB8;
+background-image: url(../img/kisspng-geometry-geometric-background-5a70d06574a3b0\ 1.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.copy-message{
+    margin: 69px 81px;
+    padding: 80px 30px;
+    gap: 50px 10px;
+    border-radius: 15px;
+background: rgba(255, 255, 255, 0.10);
+backdrop-filter: blur(25px);
+}
+
+.copy-text{
+    color: #FEFEFF;
+font-family: Roboto;
+font-size: 50px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
 }
