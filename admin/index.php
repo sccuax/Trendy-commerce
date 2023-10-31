@@ -1,3 +1,13 @@
+<?php
+session_start(); 
+
+// Verificar si el administrador ha iniciado sesión
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    // El administrador no ha iniciado sesión, redireccionar al formulario de inicio de sesión
+    header("Location: login.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,6 +73,7 @@
         <div class="container_dashboard_fields container-fluid d-flex flex-column align-items-center justify-content-start align-self-stretch">
         <div class="d-flex justify-content-center align-items-center "><h6 class="users_title_admin" align='center'> Users </h6></div>
 <?php
+
 $server_name = "localhost";
 $nombre_BD = "trendy _commce";
 $user_name = "root";
