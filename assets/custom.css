@@ -125,7 +125,7 @@ transition: 0.5s ease-in-out;
 }
 
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 .vissible{
@@ -142,11 +142,12 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 letter-spacing: 6.3px;
-display: none;
 }
 .shop-cart-dropdown{
     width: 188px;
 height: 50px;
+left: 30%;
+position: relative;
 margin-top: 15px;
 color: #FFF;
 text-align: center;
