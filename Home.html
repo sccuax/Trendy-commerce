@@ -18,11 +18,21 @@
             <img class="search-icon" src="img/Nav-bar/lupa (1) 1.png" alt="" width="25px">
             <input type="text" class="form-control rounded-pill seacrh-input" id="formGroupExampleInput" placeholder="Search">
         </div>
-        <div id="shop-cart" class="shop-cart position-relative"><img src="img/Nav-bar/Recurso 16-8.png" alt="" height="30px">
+        <div id="shop-cart" class="shop-cart position-relative">
+            <img src="img/Nav-bar/Recurso 16-8.png" alt="" height="30px">
             <div class="count-products">
 						<span id="contador-productos">0</span>
 					</div>
             </div>
+                                <!----------------------------------Cart dropdown------------------------------------>
+<div id="container-cart-products" class="container-cart-products hidden flex-column justify-content-between position-absolute align-items-center">
+    <div class="container-javascript d-flex flex-column" id="container-javascript">
+    </div>
+<div class="d-flex flex-column h-auto w-auto justify-content-center align-items-center">
+    <p class="text-cart-dropdown">Empty</p>
+    <a class="shop-cart-dropdown d-flex justify-content-center align-items-center" href="">Shop now</a>
+</div>
+</div>
     </div>
     <div class="sign-and-menu-container d-flex align-items-center justify-content-end">
         <div>
@@ -76,7 +86,7 @@
                 </div>
         </div>
         <div class="watch-announcement position-absolute">
-        <img src="img/First-container/fosil-automatic.png" alt="" height="425.833px">
+        <img src="./img/First-container/fosil-automatic.png" alt="" height="425.833px">
         </div>
     </div>
 
@@ -96,7 +106,7 @@
                 </div>
         </div>
         <div class="watch-announcement position-absolute">
-        <img src="img/First-container/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt="" height="425.833px">
+        <img src="./img/First-container/fosil-automatic.png" alt="" height="425.833px">
         </div>
     </div>
 
@@ -116,7 +126,7 @@
                 </div>
         </div>
         <div class="watch-announcement position-absolute">
-        <img src="img/First-container/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt="" height="425.833px">
+        <img src="./img/First-container/fosil-automatic.png" alt="" height="425.833px">
         </div>
     </div>
         <!--Navigation dots for the slider-->
@@ -249,31 +259,6 @@
     </div>
 
 </div>
-<!----------------------------------Cart dropdown------------------------------------>
-<div class="hidden cart-dropdown flex-column justify-content-between position-absolute align-items-center">
-    <div class="container-javascript hidden">
-    <div class="container-cart-product justify-content-between align-content-center align-self-stretch d-flex">
-        <img class="img-cart-container" src="img/cards_products/fosilClassic.jpg" alt="">
-        <div class="info-cart-container d-flex flex-column align-items-center align-self-stretch">
-            <div class="info-cart-container-text d-flex justify-content-between align-items-start align-content-start align-self-stretch flex-wrap">
-                <p class="name-product_cart-dropdown">Fosil C-automatic</p>
-                <p class="type_product_cart-dropdown">Automatic watch</p>
-                <img class="" src="img/boton-x.png" alt="" width="16px">
-            </div>
-            <div class="cart-container-price-buttons d-flex justify-content-between align-items-center align-self-stretch">
-                <p class="price-cart-dropdown">$100</p>
-                <div class="container_counter-cards position-relative cart-container_counters d-flex align-items-center">
-                    <button class="count-m d-flex align-items-center justify-content-center">-</button>
-                    <span class="counter_cards d-flex align-items-center justify-content-center">0</span>
-                    <button class="count-m d-flex align-items-center justify-content-center">+</button>
-                </div>
-            </div>
-        </div>
-    </div> 
-</div>
-    <p class="text-cart-dropdown">Empty</p>
-    <a class="shop-cart-dropdown d-flex justify-content-center align-items-center" href="">Shop now</a>
-</div>
 </div>
 
 <!--------------Cards container-------------------->
@@ -307,7 +292,7 @@
     <div class="card-columns d-flex container-fluid justify-content-center align-items-center align-self-stretch">
         <!--card-->
         <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/WhatsApp Image 2023-04-14 at 1.38 1.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" id="image-card" src="./img/cards_products/fosil.jpg" alt="product"></div>
             <div class="cards_content d-flex flex-column align-items-count-m align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
                     <p class="card_text_profuct-name">Fosil Automtic</p>
@@ -323,13 +308,13 @@
                 </div>
                 <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
                 <a href="" class="t-view-product">View product</a>
-                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                <img class="arrow-view" src="./img/Recurso 10-8.png" width="35px" alt="">
                 </div>
             </div>
         </div>
         <!--card 2-->
         <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/applewatch.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" id="image-card" src="./img/cards_products/applewatch.jpg" alt="product"></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
                     <p class="card_text_profuct-name">Apple wacth series 7</p>
@@ -345,13 +330,13 @@
                 </div>
                 <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
                 <a href="" class="t-view-product">View product</a>
-                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                <img class="arrow-view" src="./img/Recurso 10-8.png" width="35px" alt="">
                 </div>
             </div>
         </div>
         <!--card 3-->
         <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/cassioEdiffice.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill " id="image-card" src="./img/cards_products/cassioEdiffic.jpg" alt="product"></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
                     <p class="card_text_profuct-name">Casio Edifice</p>
@@ -367,13 +352,13 @@
                 </div>
                 <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
                 <a href="" class="t-view-product">View product</a>
-                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                <img class="arrow-view" src="./img/Recurso 10-8.png" width="35px" alt="">
                 </div>
             </div>
         </div>
         <!--card 4-->
         <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/fosilAutomatic.png" alt=""></div>
+            <div class="content_img"><img class="flex-fill" id="image-card" src="./img/cards_products/fosilAutomatic.png" alt="product"></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
                     <p class="card_text_profuct-name">Fosil C-automatic</p>
@@ -398,7 +383,7 @@
     <div class="card-columns d-flex container-fluid justify-content-center align-items-center align-self-stretch">
         <!--card 5-->
     <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/fosilClassic.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" id="image-card" src="./img/cards_products/fosilClassic.jpg" alt="product"></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
                     <p class="card_text_profuct-name">Fosil Classic</p>
@@ -414,13 +399,13 @@
                 </div>
                 <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
                 <a href="" class="t-view-product">View product</a>
-                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                <img class="arrow-view" src="./img/Recurso 10-8.png" width="35px" alt="">
                 </div>
             </div>
         </div>
         <!--card 6-->
     <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/gForce.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" id="image-card" src="./img/cards_products/gForce.jpg" alt="product"></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
                     <p class="card_text_profuct-name">G-force Chrono</p>
@@ -436,13 +421,13 @@
                 </div>
                 <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
                 <a href="" class="t-view-product">View product</a>
-                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                <img class="arrow-view" src="./img/Recurso 10-8.png" width="35px" alt="">
                 </div>
             </div>
         </div>
         <!--card 7-->
     <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/Tissot.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" id="image-card" src="./img/cards_products/Tissot.jpg" alt="product"></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
                     <p class="card_text_profuct-name">Tissot 1853</p>
@@ -464,7 +449,7 @@
         </div>
         <!--card 8-->
     <div class="cards_t overflow-hidden d-flex flex-column align-items-center ">
-            <div class="content_img"><img class="flex-fill" src="img/cards_products/cassioEdiffice.jpg" alt=""></div>
+            <div class="content_img"><img class="flex-fill" id="image-card" src="./img/cards_products/cassioEdiffic.jpg" alt="product"></div>
             <div class="cards_content d-flex flex-column align-items-start align-self-stretch">
                 <div class="card_text d-flex flex-column align-items-start align-self-stretch">
                     <p class="card_text_profuct-name">Casio Edifice</p>
@@ -480,7 +465,7 @@
                 </div>
                 <div class="view-product d-flex align-items-center justify-content-center align-self-stretch">
                 <a href="" class="t-view-product">View product</a>
-                <img class="arrow-view" src="img/Recurso 10-8.png" width="35px" alt="">
+                <img class="arrow-view" src="./img/Recurso 10-8.png" width="35px" alt="">
                 </div>
             </div>
         </div>
