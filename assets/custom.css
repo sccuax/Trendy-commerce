@@ -482,6 +482,10 @@ line-height: normal;
 letter-spacing: 0.3px;
 }
 
+.show-product-arrow:hover{
+    cursor: pointer;
+}
+
 /*-------------------cards main container---------------*/
 
 .cards-container-main{

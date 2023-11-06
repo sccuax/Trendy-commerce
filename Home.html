@@ -233,10 +233,10 @@
             <img class="img_category position-absolute" src="img/First-container/Categories/smatwatch.png" alt="">
             <div class="container_text-arrow d-flex w-100 justify-content-between align-items-start">
                 <div class="containe_text-category d-flex flex-column justify-content-start align-items-start">
-                    <p class="title_categories">Show all</p>
+                    <p class="title_categories show-product-arrow">Show all</p>
                     <p class="Num_products">30 producst</p>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+                <svg class="show-product-arrow" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
   <g filter="url(#filter0_d_349_50)">
     <circle cx="12.5" cy="16.5" r="12.5" fill="white" fill-opacity="0.5"/>
     <path d="M10.5814 9.25072C10.6989 9.25072 10.8159 9.2662 10.9228 9.29931C11.1972 9.3839 11.4194 9.51924 11.6348 9.66646C14.2562 11.4593 16.8809 13.2497 19.506 15.0401C19.8027 15.2424 20.0005 15.4695 20 15.7657C19.9989 16.0569 19.8107 16.2837 19.5161 16.4813C17.7252 17.6831 15.9354 18.8853 14.1451 20.0876C13.2279 20.7034 12.3117 21.3204 11.3928 21.9352C10.9175 22.2533 10.3198 22.3347 9.78276 22.1594C8.90913 21.8743 8.73525 21.149 9.42119 20.6494C9.46798 20.6152 9.51796 20.5836 9.56688 20.5508C11.8847 18.9948 14.2025 17.4387 16.5203 15.8823C16.6423 15.8005 16.6441 15.7192 16.5257 15.6383C14.2046 14.0542 11.8847 12.4701 9.56263 10.887C9.26592 10.6847 9.06386 10.4573 9.06705 10.1614C9.07184 9.75752 9.42757 9.41953 9.99546 9.28671H9.99705C10.0944 9.26332 10.1959 9.25 10.2991 9.25L10.5814 9.25072Z" fill="#D0CFDB"/>
@@ -257,6 +257,16 @@
             </div>
         </div>
     </div>
+
+<script>
+   const arrows = document.querySelectorAll(".show-product-arrow");
+arrows.forEach(arrow => {
+    arrow.addEventListener('click', showMoreProduct);
+});
+function showMoreProduct() {
+    window.location.href = "index.html";
+}
+</script>
 
 </div>
 </div>

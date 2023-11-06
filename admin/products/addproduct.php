@@ -73,7 +73,7 @@
             $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
             ?>
 <div align='center' class='d-flex w-100 pt-3 justify-content-center position-relative'>
-<form class="d-flex w-100" method ="post" action="">
+<form class="d-flex w-100" method ="post" action="" enctype="multipart/form-data">
         <table class="d-flex table contaner-fluid w-100 table_admin flex-column" align="center">
             <tr><td>
                 <label for="">Id product
@@ -102,6 +102,16 @@
                 </label>
                 </td>
             </tr>
+
+            <tr class="input-files"><td class="">
+                <img src="../../img/admin img/imagen (1).png" width="90px" style="opacity: 0.3;" alt="">
+                <label class="label-input-files" for="fileInput">Choose an image
+                <input class="form-control update_input input_product" id="fileInput" type="file" name="fileInput" accept="image/*" capture="camera"></input>
+                <button class="custom-button">Elegir archivo</button>
+                </label>
+                </td>
+            </tr>
+
             <tr><td align="center">
                 <label for="">
                 <input class="submit-button btn btn-primary" type="submit" value="Add"></input>
@@ -115,22 +125,30 @@
         </div>
     </div>
     <?php
-    if (isset($_POST["id_product"], $_POST["product_name"], $_POST["price"], $_POST["id_type_product"])) {
-                $id = $_POST["id_product"];
-                $nom = $_POST["product_name"];
-                $pric = $_POST["price"];
-                $top = $_POST["id_type_product"];
-            
-                $insertar = "INSERT INTO products (id_product, product_name, price, id_type_product) 
-                             VALUES ('$id', '$nom', '$pric', '$top')";
-            
-                if (mysqli_query($conexion, $insertar)) {
-                    echo "<span class='position-absolute bottom-0 start-50'>Added correctly</span>";
-                } else {
-                    echo "<span class='position-absolute bottom-0 start-50' align='center'>Registro fallido</span>";
-                }
-            }
-            mysqli_close($conexion);
+    if (isset($_POST["id_product"], $_POST["product_name"], $_POST["price"], $_POST["id_type_product"], $_FILES["fileInput"])) {
+        $id = $_POST["id_product"];
+        $nom = $_POST["product_name"];
+        $pric = $_POST["price"];
+        $top = $_POST["id_type_product"];
+
+        $dir = $_FILES["fileInput"]["name"];
+        $archivo = $_FILES["fileInput"]["tmp_name"];
+
+        $route = "./image/" . $dir;
+        $data_base = "image/" . $dir;
+
+        move_uploaded_file($archivo, $route); // Corregido: Usar la variable $archivo
+
+        $insertar = "INSERT INTO products (id_product, product_name, price, id_type_product, dir) 
+                     VALUES ('$id', '$nom', '$pric', '$top', '$data_base')"; // Corregido: Usar comillas para el campo $data_base
+
+        if (mysqli_query($conexion, $insertar)) {
+            echo "<span class='position-absolute succesful-message'>Added correctly</span>";
+        } else {
+            echo "<span class='position-absolute bottom-0 start-50' align='center'>Registro fallido</span>";
+        }
+    }
+    mysqli_close($conexion);
     ?>
 </body>
 </html>

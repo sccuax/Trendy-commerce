@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="7;url=Home.html">
+    <link rel="stylesheet" href="/Normalice.css">
+    <title>Trendy commerce</title>
+</head>
+<style>
+body {
+    background-image: url('./img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*Main container for the logo and the bage*/
+.main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+.logo_bag {
+    width: 873px;
+    height: 251px;
+    display: inline-flex;
+    align-items: center;
+    gap: 129px;
+}
+
+/*--CSS for the loader icon 'spinner'*/
+.spinning {
+    width: 164px;
+    position: absolute; 
+    top: 50%; 
+    right: 0%; 
+}
+
+.logo_bag, .spinning {
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+}
+.show {
+    opacity: 1; 
+}
+.sk-cube-grid {
+   display: none;
+  width: 120px;
+  height: 120px;
+  margin: 100px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #F5F4F4;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
+}
+.visible {
+   display: block;
+  width: 120px;
+  height: 120px;
+  margin: 100px auto;
+}
+
+</style>
+<body>
+  <!--Main container for the logo and the bage-->
+   <div class="main-container">
+      <div class="logo_bag" id="Image">
+         <img src="./img/bag-face.jpg" alt="" width="233px">
+         <img src="./img/Logo.png" alt="" width="511px">
+       </div>
+<!--Loader icon 'spinner'-->
+       <div class="sk-cube-grid" id="spinner">
+         <div class="sk-cube sk-cube1"></div>
+         <div class="sk-cube sk-cube2"></div>
+         <div class="sk-cube sk-cube3"></div>
+         <div class="sk-cube sk-cube4"></div>
+         <div class="sk-cube sk-cube5"></div>
+         <div class="sk-cube sk-cube6"></div>
+         <div class="sk-cube sk-cube7"></div>
+         <div class="sk-cube sk-cube8"></div>
+         <div class="sk-cube sk-cube9"></div>
+       </div>
+   </div>
+   <!--Gray circle-->
+   <div class="spinning" id="Item">
+      <img src="./img/spining.png" alt="" width="164px" height="194px">
+   </div>
+   <script>
+        document.addEventListener("DOMContentLoaded", function () {
+ // Hiding the elements
+document.getElementById('Image').style.display = 'none';
+document.getElementById('Item').style.display = 'none';
+document.getElementById('Image').classList.add('show'); 
+
+// After 1 second it shows the logo and the bage
+setTimeout(() => {
+   document.getElementById('Item').classList.add('show');
+   // Change the display style of the element with the id 'Image' to 'inline-flex'
+   document.getElementById('Image').style.display = 'inline-flex';
+}, 1000);
+
+// After 2 seconds it show the gray circle
+setTimeout(() =>{
+         document.getElementById('Item').classList.add('show');
+         document.getElementById('Item').style.display = 'block';
+         setTimeout(() =>{
+
+          // Add the 'visible' class to the element with the id 'spinner'
+            document.getElementById('spinner').classList.add('visible');
+            //Here the items are hidden to show the loader 'spinner' to load the main page
+            document.getElementById('Image').style.display = 'none';
+            document.getElementById('Item').style.display = 'none';
+         },2000);
+      },2000);
+
+});
+   </script>
+</script>
+</body>
+</html>
+
+
