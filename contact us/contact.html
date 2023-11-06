@@ -6,43 +6,48 @@
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Normalice.css">
-
     <title>Form Crud</title>
 </head>
 <body>
     <main>
         <section class="d-flex justify-content-center pt-5">
             <div class="form-container d-flex flex-column border border-light-subtle rounded-3 shadow p-3 mb-5 bg-body-tertiary rounded">
-                <h2 class="tittle-form border-bottom rounded-top">
-                    Personal information
-                </h2>
-        <section class="form-section d-flex flex-fill justify-content-center pt-5">
-            <form class="form-content d-flex flex-fill flex-column  align-items-center gap-3" id="form" action="">
-                    <div class="container-form container-fluid d-flex flex-column position-relative gap-3">
-                        <input class="fist-4-inputs form-control" type="text" name="first_name" id="firstName" placeholder="NAME">
-                        <img class="Images-input icon_input position-absolute top" src="./images/avatar-de-hombre.png" alt="">
-                        <input class="fist-4-inputs form-control" type="text" name="last_name" id="lasttName" placeholder="SURNAME">
-                        <img class="Images-input2 icon_input position-absolute bottom" src="./images/avatar-de-hombre (1).png" alt="">
-                    </div>
-                    <div class="container-form container-fluid d-flex flex-column position-relative gap-3">
-                        <input class="date-input form-control" type="date" name="age" id="ageUser" placeholder="Date of birth">
-                        <input class="fist-4-inputs form-control" type="text" name="address" id="address" placeholder="ADDRESS">
-                        <img class="Images-input3 icon_input position-absolute bottom" src="./images/ubicacion.png" alt="">
-                    </div>
-                    <div class="container-form d-flex flex-column container-fluid position-relative gap-3">
-                        <img class="Images-input4 icon_input position-absolute top" src="./images/llamada.png" alt="">
-                        <input class="second-3-inputs form-control" type="tel" name="phone_number" id="phoneNumber" placeholder="Phone number">
-                        <input class="second-3-inputs form-control" type="email" name="email" id="email" placeholder="email@example.com">
-                        <img class="Images-input5 icon_input position-absolute bottom" src="./images/retroalimentacion.png" alt="">
-                    </div>
-                    <div class="container-form d-flex container-fluid flex-column position-relative gap-3">
-                        <img class="Images-input6 icon_input position-absolute top" src="./images/trabajador.png" alt="">
-                        <input class="second-3-inputs form-control" type="text" name="career" id="career" placeholder="PROFESSION">
+                <h2 class="tittle-form border-bottom rounded-top">Personal information</h2>
+                <section class="form-section d-flex flex-fill justify-content-center pt-5">
+                    <form class="form-content d-flex flex-fill flex-column align-items-center gap-3" id="form">
+                        <div class="container-form container-fluid d-flex flex-column position-relative gap-3">
+                            <input class="form-control" type="text" name="firstName" id="firstName" placeholder="NAME">
+                            <img class="Images-input icon_input position-absolute top" src="./images/avatar-de-hombre.png" alt="">
                         </div>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="submit-button btn btn-primary" type="button" onclick="getData()">Submit</button>
-                    </div>
-                </form>
+                        <div class="container-form container-fluid d-flex flex-column position-relative gap-3">
+                            <input class="form-control" type="text" name="lastName" id="lastName" placeholder="SURNAME">
+                            <img class="Images-input2 icon_input position-absolute top" src="./images/avatar-de-hombre (1).png" alt="">
+                        </div>
+                        <div class="container-form container-fluid d-flex flex-column position-relative gap-3">
+                            <input class="date-input form-control" type="date" name="date" id="date" placeholder="Date of birth">
+                        </div>
+                        <div class="container-form d-flex flex-column container-fluid position-relative gap-3">
+                            <img class="Images-input4 icon_input position-absolute top" src="./images/llamada.png" alt="">
+                            <input class="form-control" type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone number">
+                        </div>
+                        <div class="container-form d-flex flex-column container-fluid position-relative gap-3">
+                            <input class="form-control" type="email" name="email" id="email" placeholder="email@example.com">
+                            <img class="Images-input5 icon_input position-absolute top" src="./images/retroalimentacion.png" alt="">
+                        </div>
+                        <div class="container-form d-flex container-fluid flex-column position-relative gap-3">
+                            <img class="Images-input6 icon_input position-absolute top" src="./images/trabajador.png" alt="">
+                            <input class="form-control" type="text" name="career" id="career" placeholder="PROFESSION">
+                        </div>
+                        <div id="spinner" class="spinner hidden">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="submit-button btn btn-primary" type="submit" disabled>Submit</button>
+                        </div>
+                    </form>
+                </section>
             </div>
         </section>
         <div class="d-flex flex-row justify-content-center align-items-center gap-2">

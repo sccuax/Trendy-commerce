@@ -1,56 +1,131 @@
-function getData(getUsername, getLastName, getAge, getAddress, getCellphone, getEmail, getProfession ,getSchoolevel){
+document.addEventListener("DOMContentLoaded", function () {
+    const email = {
+        firstName: "",
+        lastName: "",
+        date: "",
+        phoneNumber: "",
+        email: ""
+    };
 
-this.getUsername = getUsername;
-this.getLastName = getLastName;
-this.getAge = getAge;
-this.getAddress = getAddress;
-this.getCellphone = getCellphone;
-this.getEmail = getEmail;
-this.getProfession = getProfession;
-this.getSchoolevel = getSchoolevel;
+    const inputFirstName = document.querySelector("#firstName");
+    const inputLastName = document.querySelector("#lastName");
+    const inputAgeUser = document.querySelector("#date");
+    const inputPhoneNumber = document.querySelector("#phoneNumber");
+    const inputEmail = document.querySelector("#email");
+    const form = document.querySelector("#form");
+    const btnSubmit = document.querySelector('#form button[type="submit"]');
+    const spinner = document.querySelector("#spinner");
 
-getUsername = document.getElementById('firstName').value;
-getLastName = document.getElementById('lasttName').value;
-getAge = document.getElementById('ageUser').value;
-getAddress = document.getElementById('address').value;
-getCellphone = document.getElementById('phoneNumber').value;
-getEmail = document.getElementById('email').value;
-getProfession = document.getElementById('career').value;
+    inputEmail.addEventListener("blur", check);
+    inputPhoneNumber.addEventListener("blur", check);
+    inputFirstName.addEventListener("blur", check);
+    inputLastName.addEventListener("blur", check);
+    inputAgeUser.addEventListener("blur", check);
+    form.addEventListener("submit", sendEmail); // Cambiado de 'submit' a 'click'
 
-var firstInput = document.getElementById('scholarYes');
-var secondInput = document.getElementById('scholarNo');
+    function sendEmail(e) {
+        e.preventDefault();
+        spinner.classList.add("flex");
+        spinner.classList.remove("hidden");
 
+        setTimeout(() => {
+            spinner.classList.remove("flex");
+            spinner.classList.add("hidden");
 
+            // Crear alerta de envío
+            const succesfulAlert = document.createElement("p");
+            succesfulAlert.classList.add(
+                "text-bg-success",
+                "p-3",
+                "text-center",
+                "text-uppercase",
+                "uppercase"
+            );
+            succesfulAlert.textContent = "Your info was sent";
+            form.appendChild(succesfulAlert);
 
-if (firstInput.checked) {
-    getSchoolevel = "You have a high school degree";
-    } else if (secondInput.checked) {
-    getSchoolevel = "You don't have a high school degree";
-    }else{
-    getSchoolevel = "!Alert¡ choose either you have a high school or not"
+            setTimeout(() => {
+                succesfulAlert.remove();
+            }, 3000);
+        }, 3000);
+    }
+    
+
+    function check(e) {
+        if(e.target.value.trim() === ""){
+            showAlert(
+                `This filed ${e.target.id} is mandatory`,
+                e.target.parentElement
+            );
+            email[e.target.id] = "";
+            checkEmail();
+            validatePhone();
+            return;
+        }
+        if (e.target.id === "email" && !validateEmail(e.target.value)) {
+            showAlert("This email is not valid", e.target.parentElement);
+            email[e.target.id] = "";
+            checkEmail();
+            return;
+        }
+        if (e.target.id === "phoneNumber" && !validatePhone(e.target.value)) {
+            showAlert("This phone number is not valid", e.target.parentElement);
+            email[e.target.id] = "";
+            checkEmail();
+            return;
+        }
+
+        cleanAlert(e.target.parentElement);
+
+        email[e.target.id] = e.target.value.trim().toLowerCase();
+
+        checkEmail();
     }
 
-//var data = getUsername +"\n"+ getLastName +"\n"+ getAge +"\n"+ getAddress +"\n"+ getCellphone +"\n"+ getEmail +"\n"+ getProfession +"\n"+ getSchoolevel;
+    function showAlert(message, reference) {
+        cleanAlert(reference);
 
-let data = `Your name is: ${getUsername}\nYour lastname is: ${getLastName}\nYour date of birth is: ${getAge}\nyou're located at ${getAddress}\nYour phone number is: ${getCellphone}\nYou email address is: ${getEmail}\nYour profession is: ${getProfession}\nDo you have high school: ${getSchoolevel}`;
+        const error = document.createElement("p");
+        error.textContent = message;
+        error.classList.add("text-bg-danger", "p-3");
+        reference.appendChild(error);
+    }
 
-document.getElementById('userDescription').value = data;
+    function cleanAlert(reference) {
+        const alert = reference.querySelector(".text-bg-danger");
 
+        if (alert) {
+            alert.remove();
+        }
+    }
 
-}
+    function validateEmail(email) {
+        const regex = /^\w+([.-_+]?\w+)@\w+([.-]?\w+)(\.\w{2,10})+$/;
+        const result = regex.test(email);
+        return result;
+    }
 
-/*
-this.showFunction = function(){
-    console.log(`Hola mi nombre es ${this.getUsername} y tengo ${this.getAge} años`);
-}*/
+    function validatePhone() {
+        const cel = phoneNumber.value;
+    
+        for (i = 0; i < cel.length; i++) {
+          const code = cel.charCodeAt(i);
+          if (code < 48 || code > 57) {
+            phoneNumber.value = "";
+            return false;
+          }
+        }
+        return true;
+      }
 
-//const person1 = new getData ("andres", "velez", 30);
-//person1.showFunction();
-
-/*
-var form = document.getElementById('form');
-form.reset();
-*/
-
-
-
+    function checkEmail() {
+        if (Object.values(email).includes("")) {
+            btnSubmit.classList.add("bg-opacity-25");
+            btnSubmit.disabled = true; // Cambiado de 'ariaDisabled' a 'disabled'
+            console.log(email);
+            return;
+        }
+        btnSubmit.classList.remove("bg-opacity-25");
+        btnSubmit.disabled = false;
+    }
+});
