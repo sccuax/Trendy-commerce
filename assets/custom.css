@@ -64,6 +64,34 @@ ul{
     height: 25px;
     pointer-events: none;
 }
+
+.seacrh-input-allProducts{
+    display: flex;
+height: 64px;
+padding: 10px 50px;
+align-items: center;
+gap: 10px;
+flex: 1 0 0;
+border-radius: 20px !important;
+border: 1px solid #D1D9DC;
+background: #F5F7F9;
+font-size: 20px;
+}
+
+.search-icon-allProducts{
+    position: absolute;
+    top: 30%;
+    left: 18px;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+}
+
+/*this section is for -see allproducts-*/
+.grid-allProducts{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
 .count-products{
     position: absolute;
     top: 55%;
@@ -753,6 +781,20 @@ background-clip: text;
 
 .arrow-view{
     cursor: pointer;
+}
+
+.back_home{
+    text-align: center;
+    font-family: Candara;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.72px;
+    background: linear-gradient(231deg, rgba(1, 174, 217, 0.89) 15.18%, #7BC683 82.53%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /*--------------second advertisement contaner-----------*/
