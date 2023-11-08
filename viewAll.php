@@ -66,54 +66,107 @@
     </div>
     </div>
     <div class="flex-fill position-relative">
-            <img class="search-icon-allProducts" src="img/Nav-bar/lupa (1) 1.png" alt="" width="25px">
-            <input type="text" class="form-control rounded-pill seacrh-input-allProducts" id="formGroupExampleInput" placeholder="Search">
+        <form action="" method="GET" action="">
+            <input type="text" class="form-control rounded-pill seacrh-input-allProducts" id="formGroupExampleInput" name="search" placeholder="Search">
+            <button type="submit" class="boton-con-imagen"><img class="search-icon-allProducts" src="img/Nav-bar/lupa (1) 1.png" alt="" width="25px"></button>
+        </form>
         </div>
     </div>
 </div>
     <!--cards container rows-->
 <div class="container_cards_rows d-flex flex-column container-fluid justify-content-center align-items-center align-self-stretch" id="courses-list">
-    <?php
-    $server_name = "localhost";
-    $nombre_BD = "trendy _commce"; 
-    $user_name = "root";
-    $contraseña = "12345";
+<?php
+        $server_name = "localhost";
+        $nombre_BD = "trendy _commce";
+        $user_name = "root";
+        $contraseña = "12345";
 
-    $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
+        $conexion = mysqli_connect($server_name, $user_name, $contraseña, $nombre_BD);
 
-$consulta = "select * from products";
+        if (isset($_GET['search'])) {
+            $searchTerm = mysqli_real_escape_string($conexion, $_GET['search']);
+            $consulta = "SELECT * FROM products WHERE product_name LIKE '%$searchTerm%'";
+        } else {
+            $consulta = "select * from products";
+        }
 
-$resultado = mysqli_query($conexion, $consulta);
+        $resultado = mysqli_query($conexion, $consulta);
 
-echo "<div class='card-columns grid-allProducts container-fluid justify-content-center align-items-center align-self-stretch'> ";
+        echo "<div class='card-columns grid-allProducts container-fluid justify-content-center align-items-center align-self-stretch'> ";
 
         while ($row = mysqli_fetch_array($resultado)) {
             echo "
-        <div class='cards_t overflow-hidden d-flex flex-column align-items-center'>
-        <div class='content_img'><img class='flex-fill' id='image-card' src='admin/products/" . $row['dir'] . "' alt='product'></div>
-        <div class='cards_content d-flex flex-column align-items-start align-self-stretch'>
-            <div class='card_text d-flex flex-column align-items-start align-self-stretch'>
-                <p class='card_text_profuct-name'>" . $row['product_name'] . "</p>
-                <p class='card_text_type'>" . $row['id_type_product'] . "</p>
-            </div>
-            <div class='cards_container-buttons d-flex align-items-center align-self-stretch'>
-                <a class='buy_card_button align-self-stretch justify-content-center align-items-center d-flex' href=''>Buy $" . $row['price'] . "</a>
-                <div class='container_counter-cards d-flex align-items-center'>
-                    <button class='count-m d-flex align-items-center justify-content-center'>-</button>
-                    <span class='counter_cards d-flex align-items-center justify-content-center'>0</span>
-                    <button class='count-m add-this-product d-flex align-items-center justify-content-center' data-id='" . $row['id_product'] . "'>+</button>
+            <div class='cards_t overflow-hidden d-flex flex-column align-items-center'>
+                <div class='content_img'><img class='flex-fill' id='image-card' src='admin/products/" . $row['dir'] . "' alt='product'></div>
+                <div class='cards_content d-flex flex-column align-items-start align-self-stretch'>
+                    <div class='card_text d-flex flex-column align-items-start align-self-stretch'>
+                        <p class='card_text_profuct-name'>" . $row['product_name'] . "</p>
+                        <p class='card_text_type'>" . $row['id_type_product'] . "</p>
+                    </div>
+                    <div class='cards_container-buttons d-flex align-items-center align-self-stretch'>
+                        <a class='buy_card_button align-self-stretch justify-content-center align-items-center d-flex' href=''>Buy $" . $row['price'] . "</a>
+                        <div class='container_counter-cards d-flex align-items-center'>
+                            <button class='count-m d-flex align-items-center justify-content-center'>-</button>
+                            <span class='counter_cards d-flex align-items-center justify-content-center'>0</span>
+                            <button class='count-m add-this-product d-flex align-items-center justify-content-center' data-id='" . $row['id_product'] . "'>+</button>
+                        </div>
+                    </div>
+                    <div class='view-product d-flex align-items-center justify-content-center align-self-stretch'>
+                        <a href='' class='t-view-product'>View Product</a>
+                        <img class='arrow-view' src='./img/Recurso 10-8.png' width='35px' alt=''>
+                    </div>
                 </div>
-            </div>
-            <div class='view-product d-flex align-items-center justify-content-center align-self-stretch'>
-                <a href='' class='t-view-product'>View Product</a>
-                <img class='arrow-view' src='./img/Recurso 10-8.png' width='35px' alt=''>
-            </div>
-        </div>
-        </div>";
+            </div>";
         }
         echo "</div>";
-    ?>
+        ?>
     </div>
+    <!-- <script>
+form.addEventListener('submit', async function (event) {
+    event.preventDefault(); // Evitamos que se envíe el formulario
+
+    const searchTerm = searchInput.value; // Obtenemos el término de búsqueda
+
+    // Realizamos la búsqueda
+    const response = await fetch(`search.php?search=${searchTerm}`);
+    const products = await response.json();
+
+    // Limpiamos el contenedor de productos
+    productsContainer.innerHTML = '';
+
+    // Mostramos los productos encontrados
+    products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'cards_t overflow-hidden d-flex flex-column align-items-center';
+
+        productCard.innerHTML = `
+            <div class='content_img'><img class='flex-fill' id='image-card' src="admin/products/${product.dir}" alt='product'></div>
+            <div class='cards_content d-flex flex-column align-items-start align-self-stretch'>
+                <div class='card_text d-flex flex-column align-items-start align-self-stretch'>
+                    <p class='card_text_profuct-name'>${product.product_name}</p>
+                    <p class='card_text_type'>${product.id_type_product}</p>
+                </div>
+                <div class='cards_container-buttons d-flex align-items-center align-self-stretch'>
+                    <a class='buy_card_button align-self-stretch justify-content-center align-items-center d-flex' href=''>Buy $${product.price}</a>
+                    <div class='container_counter-cards d-flex align-items-center'>
+                        <button class='count-m d-flex align-items-center justify-content-center'>-</button>
+                        <span class='counter_cards d-flex align-items-center justify-content-center'>0</span>
+                        <button class='count-m add-this-product d-flex align-items-center justify-content-center' data-id='${product.id_product}'>+</button>
+                    </div>
+                </div>
+                <div class='view-product d-flex align-items-center justify-content-center align-self-stretch'>
+                    <a href='' class='t-view-product'>View Product</a>
+                    <img class='arrow-view' src='./img/Recurso 10-8.png' width='35px' alt=''>
+                </div>
+            </div>
+        `;
+
+        productsContainer.appendChild(productCard);
+    });
+});
+
+</script>
+ -->
 </div>
 <div class="d-flex flex-row justify-content-center align-items-center gap-2">
             <a class="back_home" href="Home.html">Back Home</a>

@@ -68,11 +68,10 @@ ul{
 .seacrh-input-allProducts{
     display: flex;
 height: 64px;
-padding: 10px 50px;
+padding: 10px 100px;
 align-items: center;
 gap: 10px;
 flex: 1 0 0;
-border-radius: 20px !important;
 border: 1px solid #D1D9DC;
 background: #F5F7F9;
 font-size: 20px;
@@ -969,4 +968,19 @@ text-decoration: none;
 
 .termns_text:hover{
     text-decoration: underline;
+}
+
+.boton-con-imagen{
+    background-image: url('/img/Nav-bar/lupa\ \(1\)\ 1.png');
+  background-size: cover; /* Otra opción es 'contain' */
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 18px 40px; /* Ajusta el relleno según tus necesidades */
+  border: none; /* Para eliminar el borde del botón si lo deseas */
+  cursor: pointer;
+  height: 62px;
+    position: absolute;
+    top: 1%;
+    left: 0.3%;
+  border-radius: 50rem 0 0 50rem;
 }
