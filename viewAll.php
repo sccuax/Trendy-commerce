@@ -67,15 +67,17 @@
     </div>
     <div class="flex-fill position-relative">
         <form action="" method="GET" action="">
-            <input type="text" class="form-control rounded-pill seacrh-input-allProducts" id="formGroupExampleInput" name="search" placeholder="Search">
+            <!-- <input type="text" class="form-control rounded-pill seacrh-input-allProducts" id="formGroupExampleInput" name="search" placeholder="Search"> -->
+            <input class="form-control rounded-pill seacrh-input-allProducts" type="text" id="searchInput" placeholder="Buscar productos">
             <button type="submit" class="boton-con-imagen"><img class="search-icon-allProducts" src="img/Nav-bar/lupa (1) 1.png" alt="" width="25px"></button>
         </form>
         </div>
     </div>
 </div>
     <!--cards container rows-->
-<div class="container_cards_rows d-flex flex-column container-fluid justify-content-center align-items-center align-self-stretch" id="courses-list">
-<?php
+<!-- <div class="container_cards_rows d-flex flex-column container-fluid justify-content-center align-items-center align-self-stretch" id="result"> -->
+<div class="card-columns grid-allProducts container-fluid justify-content-center align-items-center align-self-stretch" id="result">
+<!-- <?php
         $server_name = "localhost";
         $nombre_BD = "trendy _commce";
         $user_name = "root";
@@ -119,54 +121,8 @@
             </div>";
         }
         echo "</div>";
-        ?>
+        ?> -->
     </div>
-    <!-- <script>
-form.addEventListener('submit', async function (event) {
-    event.preventDefault(); // Evitamos que se envíe el formulario
-
-    const searchTerm = searchInput.value; // Obtenemos el término de búsqueda
-
-    // Realizamos la búsqueda
-    const response = await fetch(`search.php?search=${searchTerm}`);
-    const products = await response.json();
-
-    // Limpiamos el contenedor de productos
-    productsContainer.innerHTML = '';
-
-    // Mostramos los productos encontrados
-    products.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.className = 'cards_t overflow-hidden d-flex flex-column align-items-center';
-
-        productCard.innerHTML = `
-            <div class='content_img'><img class='flex-fill' id='image-card' src="admin/products/${product.dir}" alt='product'></div>
-            <div class='cards_content d-flex flex-column align-items-start align-self-stretch'>
-                <div class='card_text d-flex flex-column align-items-start align-self-stretch'>
-                    <p class='card_text_profuct-name'>${product.product_name}</p>
-                    <p class='card_text_type'>${product.id_type_product}</p>
-                </div>
-                <div class='cards_container-buttons d-flex align-items-center align-self-stretch'>
-                    <a class='buy_card_button align-self-stretch justify-content-center align-items-center d-flex' href=''>Buy $${product.price}</a>
-                    <div class='container_counter-cards d-flex align-items-center'>
-                        <button class='count-m d-flex align-items-center justify-content-center'>-</button>
-                        <span class='counter_cards d-flex align-items-center justify-content-center'>0</span>
-                        <button class='count-m add-this-product d-flex align-items-center justify-content-center' data-id='${product.id_product}'>+</button>
-                    </div>
-                </div>
-                <div class='view-product d-flex align-items-center justify-content-center align-self-stretch'>
-                    <a href='' class='t-view-product'>View Product</a>
-                    <img class='arrow-view' src='./img/Recurso 10-8.png' width='35px' alt=''>
-                </div>
-            </div>
-        `;
-
-        productsContainer.appendChild(productCard);
-    });
-});
-
-</script>
- -->
 </div>
 <div class="d-flex flex-row justify-content-center align-items-center gap-2">
             <a class="back_home" href="Home.html">Back Home</a>
@@ -207,7 +163,7 @@ form.addEventListener('submit', async function (event) {
                 <div class="menu-footer d-flex flex-column align-items-start align-self-stretch">
                     <h5 class="tittle-footer">Main</h5>
                     <ul class="d-flex flex-column">
-                        <li><a class="link-footer" href="">Search</a></li>
+                        <li><a class="link-footer" href="viewAll.php">Search</a></li>
                         <li><a class="link-footer" href="./contact us/contact.html">contact us</a></li>
                         <li><a class="link-footer" href="./admin/login.html">Log in</a></li>
                         <li><a class="link-footer" href="">Order online</a></li>
@@ -244,7 +200,7 @@ form.addEventListener('submit', async function (event) {
         </div>
     </div>
 </footer>
-<script src="app.js"></script>
+<script src="search.js"></script>
 <script src="cart.js"></script>
 </body>
 </html>

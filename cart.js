@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <img class="remove-product" src="img/boton-x.png" alt="" width="16px" data-id="${product.id}">
                     </div>
                     <div class="cart-container-price-buttons d-flex justify-content-between align-items-center align-self-stretch">
-                        <p class="price-cart-dropdown">$${product.price.slice(3)}</p>
+                        <p class="price-cart-dropdown">$${product.price.slice(5)}</p>
                         <div class="container_counter-cards position-relative cart-container_counters d-flex align-items-center">
                             <button class="count-m d-flex align-items-center justify-content-center">-</button>
                             <span class="counter_cards d-flex align-items-center justify-content-center">${product.quantity}</span>
