@@ -6,6 +6,25 @@ body{
     background: linear-gradient(231deg, #D1D9DC -4.61%, #F8FAFC 115.14%);
 }
 
+h3{
+  color: #353535 !important;
+font-family: Roboto;
+font-style: normal;
+font-weight: 600 !important;
+line-height: normal !important;
+letter-spacing: 0.66px;
+}
+
+p{
+  color: #333 !important;
+font-family: Candara !important;
+font-size: 20px;
+font-style: normal !important;
+font-weight: 400 !important;
+line-height: normal;
+letter-spacing: 0.6px;
+}
+
 img{
     width: 26px;
     left: 15px;
@@ -138,4 +157,30 @@ background: #D1D9DC;
       -webkit-transform: scale(1.0);
       transform: scale(1.0);
     }
+  }
+
+
+  #message {
+    display:none;
+  }
+
+  .valid {
+    color: green;
+  }
+  
+  .valid:before {
+    position: relative;
+    left: -35px;
+    content: "&#10004;";
+  }
+  
+  /* Add a red text color and an "x" icon when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+  
+  .invalid:before {
+    position: relative;
+    left: -35px;
+    content: "&#10006;";
   }

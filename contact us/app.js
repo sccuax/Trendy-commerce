@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     inputFirstName.addEventListener("blur", check);
     inputLastName.addEventListener("blur", check);
     inputAgeUser.addEventListener("blur", check);
-    form.addEventListener("submit", sendEmail); // Cambiado de 'submit' a 'click'
+    form.addEventListener("submit", sendEmail); 
 
     function sendEmail(e) {
         e.preventDefault();
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function checkEmail() {
         if (Object.values(email).includes("")) {
             btnSubmit.classList.add("bg-opacity-25");
-            btnSubmit.disabled = true; // Cambiado de 'ariaDisabled' a 'disabled'
+            btnSubmit.disabled = true; 
             console.log(email);
             return;
         }

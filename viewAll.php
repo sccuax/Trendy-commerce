@@ -67,17 +67,17 @@
     </div>
     <div class="flex-fill position-relative">
         <form action="" method="GET" action="">
-            <!-- <input type="text" class="form-control rounded-pill seacrh-input-allProducts" id="formGroupExampleInput" name="search" placeholder="Search"> -->
-            <input class="form-control rounded-pill seacrh-input-allProducts" type="text" id="searchInput" placeholder="Buscar productos">
+            <input type="text" class="form-control rounded-pill seacrh-input-allProducts" id="formGroupExampleInput" name="search" placeholder="Search">
+            <!-- <input class="form-control rounded-pill seacrh-input-allProducts" type="text" id="searchInput" placeholder="Buscar productos"> -->
             <button type="submit" class="boton-con-imagen"><img class="search-icon-allProducts" src="img/Nav-bar/lupa (1) 1.png" alt="" width="25px"></button>
         </form>
         </div>
     </div>
 </div>
     <!--cards container rows-->
-<!-- <div class="container_cards_rows d-flex flex-column container-fluid justify-content-center align-items-center align-self-stretch" id="result"> -->
-<div class="card-columns grid-allProducts container-fluid justify-content-center align-items-center align-self-stretch" id="result">
-<!-- <?php
+ <div class="container_cards_rows d-flex flex-column container-fluid justify-content-center align-items-center align-self-stretch" id="result">
+<!-- <div class="card-columns grid-allProducts container-fluid justify-content-center align-items-center align-self-stretch" id="result"> -->
+<?php
         $server_name = "localhost";
         $nombre_BD = "trendy _commce";
         $user_name = "root";
@@ -121,7 +121,7 @@
             </div>";
         }
         echo "</div>";
-        ?> -->
+        ?> 
     </div>
 </div>
 <div class="d-flex flex-row justify-content-center align-items-center gap-2">
@@ -200,7 +200,7 @@
         </div>
     </div>
 </footer>
-<script src="search.js"></script>
+<!-- <script src="search.js"></script> -->
 <script src="cart.js"></script>
 </body>
 </html>
