@@ -984,3 +984,10 @@ text-decoration: none;
     left: 0.3%;
   border-radius: 50rem 0 0 50rem;
 }
+
+/*-------------------------content for the logged user----------------------------*/
+
+.logged-user{
+    padding: var(--padding-navbar);
+    gap: var(--universal_gap);
+}

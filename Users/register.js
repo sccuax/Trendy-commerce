@@ -189,3 +189,26 @@ inputPassword.onfocus = function() {
     }
 });
 
+//PHP register-------------------------------------------------------------------------
+document.getElementById("form").addEventListener("submit", async function (event) {
+  event.preventDefault();
+  const form = event.target;
+  
+  // ... código para mostrar un spinner o mensaje de carga ...
+
+  const formData = new FormData(form);
+  const response = await fetch(form.action, {
+      method: form.method,
+      body: formData
+  });
+
+  if (response.ok) {
+      // El registro fue exitoso, puedes redirigir al usuario o mostrar un mensaje de éxito
+      console.log("Registro exitoso");
+  } else {
+      // El registro falló, puedes mostrar un mensaje de error
+      console.error("Error en el registro");
+  }
+
+  // ... código para ocultar el spinner o mensaje de carga ...
+});

@@ -32,7 +32,7 @@
     </div>
     <div class="sign-and-menu-container d-flex align-items-center justify-content-end">
         <div>
-            <a href="" class="btn btn-light rounded-pill login-singup border border-light-subtle">Sign up</a>
+            <a href="./Users/register.html" class="btn btn-light rounded-pill login-singup border border-light-subtle">Sign up</a>
         </div>
             <div>
                 <a href="./admin/login.html" class="btn btn-light rounded-pill d-flex flex-row-reverse login-singup align-items-center border border-light-subtle"><img src="img/Nav-bar/Recurso 2-8.png" alt="" width="16px" height="22px"> Log in</a>
@@ -125,7 +125,7 @@
     </div>
 </div>
 <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-            <a class="back_home" href="Home.html">Back Home</a>
+            <a class="back_home" href="Home.php">Back Home</a>
             <img class="arrow-view" width="35px" src="./img/Recurso 10-8.png" alt="">
         </div>
 </div>

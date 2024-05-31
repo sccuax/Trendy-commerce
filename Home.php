@@ -10,7 +10,8 @@
     <title>Trendy commerce</title>
 </head>
 <body>
-    <!--Navbar-->
+    
+<!--Navbar-->
 <div class="nav container-fluid d-flex justify-content-between align-items-center">
     <div><img src="img/Logo.png" alt="" width="168px"></div>
     <div class="d-flex align-items-center search-bar">
@@ -36,16 +37,55 @@
     </div>
     <div class="sign-and-menu-container d-flex align-items-center justify-content-end">
         <div>
-            <a href="./Users/register.html" class="btn btn-light rounded-pill login-singup border border-light-subtle">Sign up</a>
+            <a href="./Users/register.html" class="btn btn-light rounded-pill login-singup border border-light-subtle" id="btnLoggedOut">Sign up</a>
         </div>
             <div>
-                <a href="./admin/login.html" class="btn btn-light rounded-pill d-flex flex-row-reverse login-singup align-items-center border border-light-subtle"><img src="img/Nav-bar/Recurso 2-8.png" alt="" width="16px" height="22px"> Log in</a>
+                <a href="./admin/login.html" class="btn btn-light rounded-pill d-flex flex-row-reverse login-singup align-items-center border border-light-subtle"><img src="img/Nav-bar/Recurso 2-8.png" id='btnLogin' alt="" width="16px" height="22px"> Log in</a>
             </div>
                 <div class="main-menu">
                     <img src="img/Nav-bar/Recurso 3-8 1.png" width="28.543px" alt="">
                 </div>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const visibleBtn = document.querySelector('#btnLoggedIn');
+        const hiddenBtn = document.querySelector('#btnLogin');
+
+        if (visibleBtn && visibleBtn.classList.contains('d-flex')) {
+            hiddenBtn.style.display = 'none';
+        } else {
+            hiddenBtn.style.display = 'block';  // O el valor que prefieras, como 'inline', 'inline-block', etc.
+        }
+    });
+</script>
 </div>
+
+<!--------aditional content of the user when they logged in--------------------->
+
+<?php
+    session_start();
+
+    if (isset($_SESSION['user_logged_in'])) {
+        echo "
+        <div class='d-flex w-100 justify-content-end flex-row logged-user'> <p>Bienvenido, " . $_SESSION['name'] . "!</p>";
+
+        // Verificar si el usuario tiene una imagen de perfil
+        if (!empty($_SESSION['user_profile_image'])) {
+            // Mostrar la imagen de perfil
+            echo "<img src='{$_SESSION['user_profile_image']}' width='34px' alt='Perfil'>";
+        } else {
+            // Mostrar una imagen predeterminada si el usuario no tiene una imagen de perfil
+            echo "<img src='./img/cat-5773481_1280.jpg' width='34px' alt='Perfil'>";
+        }
+
+        // Agrega un botón para cerrar sesión
+        echo "<form action='logout.php' method='post'>";
+        echo "<button class='btn btn-light rounded-pill d-flex flex-row-reverse 
+        login-singup align-items-center border border-light-subtle' id='btnLoggedIn' type='submit'>Cerrar Sesión</button>";
+        echo "</form>";
+        echo "</div>";
+    }
+    ?>
 
 <!--------First container, this contains the announcement and the categories---------->
 <div class="first-container d-flex align-items-center universal_spacing container-fluid position-relative">

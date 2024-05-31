@@ -16,7 +16,6 @@ letter-spacing: 0.66px;
 }
 
 p{
-  color: #333 !important;
 font-family: Candara !important;
 font-size: 20px;
 font-style: normal !important;
@@ -170,8 +169,9 @@ background: #D1D9DC;
   
   .valid:before {
     position: relative;
-    left: -35px;
-    content: "&#10004;";
+    margin-right: 10px;
+    /* left: -15px; */
+    content: "✔";
   }
   
   /* Add a red text color and an "x" icon when the requirements are wrong */
@@ -181,6 +181,7 @@ background: #D1D9DC;
   
   .invalid:before {
     position: relative;
-    left: -35px;
-    content: "&#10006;";
+    margin-right: 10px;
+    /* left: -15px; */
+    content: "✖";
   }
